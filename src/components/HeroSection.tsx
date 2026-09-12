@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, Award, Server, Code2, FileText, ArrowRight, Download, CheckCircle2, Globe, Sparkles, Terminal, Copy, Github, Linkedin, MessageSquare, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Award, Server, Code2, FileText, ArrowRight, Download, CheckCircle2, Globe, Terminal, Copy, Github, Linkedin, MessageSquare, ExternalLink } from 'lucide-react';
 import { cvData } from '../data/cvData';
 import { SpotlightCard } from './SpotlightCard';
 import { soundEffects } from '../utils/soundEffects';
@@ -13,15 +13,15 @@ interface HeroSectionProps {
 
 const ROLES = [
   'Full-Stack Software Developer',
+  'ICT Infrastructure & Systems Specialist',
+  'Huawei HCIA Cloud Solutions Engineer',
+  'Cybersecurity & Disaster Recovery Specialist',
+  'Space Digital Infrastructure & Geospatial Researcher',
   'Elite Video Editor & Motion Designer',
   'Product Designer & UI/UX Specialist',
-  'Cinematic Post-Production Specialist',
-  'Network Engineer',
-  'IT Infrastructure & Systems Specialist',
-  'Huawei Cloud Certified Solutions Engineer',
   'Accounting & Financial Systems Specialist (CPA 1 & 2)',
   'Workflow Automation & Python Engineer',
-  'Graphic & Creative Media Specialist',
+  'Network Operations & ISP Engineer'
 ];
 
 interface Interactive3DTerminalProps {
@@ -126,16 +126,16 @@ const Interactive3DTerminal: React.FC<Interactive3DTerminalProps> = ({ activeTab
           {activeTab === 'overview' && (
             <div className="space-y-1.5 font-mono">
               <p><span className="text-emerald-400">"candidate"</span>: <span className="text-amber-300">"Daniel Muiruri Itugi"</span>,</p>
-              <p><span className="text-emerald-400">"headline"</span>: <span className="text-amber-300">"Full-Stack, Elite Video Editor & Systems Eng"</span>,</p>
-              <p><span className="text-emerald-400">"location"</span>: <span className="text-amber-300">"Nairobi, Kenya"</span>,</p>
-              <p><span className="text-emerald-400">"experience"</span>: <span className="text-amber-300">"6+ Yrs Freelance, Media, Appville & ISP"</span>,</p>
-              <p><span className="text-emerald-400">"status"</span>: <span className="text-emerald-300 font-semibold">"Available for Immediate Roles"</span></p>
+              <p><span className="text-emerald-400">"headline"</span>: <span className="text-amber-300">"ICT Infrastructure, Cloud & Full-Stack Eng"</span>,</p>
+              <p><span className="text-emerald-400">"specialization"</span>: <span className="text-amber-300">"Cybersecurity, Disaster Recovery & Space Tech"</span>,</p>
+              <p><span className="text-emerald-400">"experience"</span>: <span className="text-amber-300">"6+ Yrs Enterprise Systems, Media & ISP"</span>,</p>
+              <p><span className="text-emerald-400">"status"</span>: <span className="text-emerald-300 font-semibold">"Available for High-Impact Roles"</span></p>
             </div>
           )}
 
           {activeTab === 'certs' && (
             <div className="space-y-1.5 font-mono">
-              <p><span className="text-emerald-400">"huaweiCloud"</span>: <span className="text-sky-300">"HCIA Cloud Computing V4.0 Certified"</span>,</p>
+              <p><span className="text-emerald-400">"huaweiCloud"</span>: <span className="text-sky-300">"HCIA Cloud Computing & Cloud Service (Certified)"</span>,</p>
               <p><span className="text-emerald-400">"softwareEng"</span>: <span className="text-sky-300">"ALX Software Engineering Certificate"</span>,</p>
               <p><span className="text-emerald-400">"virtualAssistant"</span>: <span className="text-sky-300">"ALX Virtual Assistant Specialist"</span>,</p>
               <p><span className="text-emerald-400">"accounting"</span>: <span className="text-sky-300">"KASNEB CPA Sections 1 & 2"</span></p>
@@ -144,10 +144,10 @@ const Interactive3DTerminal: React.FC<Interactive3DTerminalProps> = ({ activeTab
 
           {activeTab === 'stack' && (
             <div className="space-y-1.5 font-mono">
-              <p><span className="text-emerald-400">"fullstack"</span>: <span className="text-purple-300">["PHP", "MySQL", "React", "TypeScript"]</span>,</p>
-              <p><span className="text-emerald-400">"video & motion"</span>: <span className="text-purple-300">["Premiere Pro", "DaVinci", "CapCut", "After Effects"]</span>,</p>
-              <p><span className="text-emerald-400">"networking"</span>: <span className="text-purple-300">["Subnetting", "MikroTik", "Linux"]</span>,</p>
-              <p><span className="text-emerald-400">"design & photo"</span>: <span className="text-purple-300">["Figma", "Photo Retouching (PS/LR)", "Illustrator"]</span></p>
+              <p><span className="text-emerald-400">"ict & security"</span>: <span className="text-purple-300">["MikroTik", "Linux Server", "Active Directory", "Firewalls"]</span>,</p>
+              <p><span className="text-emerald-400">"cloud & space"</span>: <span className="text-purple-300">["Huawei Cloud", "Backup/DR", "QGIS/GDAL", "Telemetry"]</span>,</p>
+              <p><span className="text-emerald-400">"fullstack"</span>: <span className="text-purple-300">["PHP", "MySQL", "React", "TypeScript", "Python"]</span>,</p>
+              <p><span className="text-emerald-400">"creative suite"</span>: <span className="text-purple-300">["Premiere Pro", "DaVinci Resolve", "Figma", "Photoshop"]</span></p>
             </div>
           )}
 
@@ -255,6 +255,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="space-y-3">
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-light tracking-tighter leading-[0.95] text-white/95">
                 Daniel <span className="text-white/40 italic font-serif">Muiruri</span>
+                <span className="sr-only"> — Full-Stack Software Developer, Huawei HCIA Cloud Solutions &amp; ICT Infrastructure Specialist in Nairobi, Kenya</span>
               </h1>
 
               {/* Typewriter text line */}

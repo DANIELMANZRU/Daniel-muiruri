@@ -7,6 +7,7 @@ import { ExperienceSection } from './components/ExperienceSection';
 import { PhotoShowcaseSection } from './components/PhotoShowcaseSection';
 import { ProjectEstimatorSection } from './components/ProjectEstimatorSection';
 import { EducationSection } from './components/EducationSection';
+import { SEOFAQSection } from './components/SEOFAQSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { CoverLetterModal } from './components/CoverLetterModal';
@@ -62,8 +63,12 @@ export default function App() {
         {/* Section 8: Interactive Scope Estimator (Feature 2) */}
         <ProjectEstimatorSection />
 
-        {/* Section 9: Contact Form & Availability */}
+        {/* Section 9: SEO FAQs & Search Visibility */}
+        <SEOFAQSection />
+
+        {/* Section 10: Contact Form & Availability */}
         <ContactSection />
+
       </main>
 
       {/* Footer */}

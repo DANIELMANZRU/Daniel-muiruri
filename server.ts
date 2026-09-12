@@ -15,6 +15,17 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', candidate: 'Daniel Muiruri Itugi' });
 });
 
+// Explicit SEO routes for crawlers
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  res.sendFile(path.join(process.cwd(), 'public', 'robots.txt'));
+});
+
+app.get('/sitemap.xml', (req, res) => {
+  res.type('application/xml');
+  res.sendFile(path.join(process.cwd(), 'public', 'sitemap.xml'));
+});
+
 // Vite Middleware for Dev, Static serving for Production
 async function startServer() {
   if (process.env.NODE_ENV !== 'production') {

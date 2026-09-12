@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Camera, Sliders, Image as ImageIcon, Sparkles, Eye, SunMedium, Palette, MapPin, ZoomIn, X, ChevronLeft, ChevronRight, ArrowRight, Video, Film, SlidersHorizontal, Volume2, Layers, MonitorPlay, Play, CheckCircle2 } from 'lucide-react';
+import { Camera, Sliders, Image as ImageIcon, Eye, SunMedium, Palette, MapPin, ZoomIn, X, ChevronLeft, ChevronRight, ArrowRight, Video, Film, SlidersHorizontal, Volume2, Layers, MonitorPlay, Play, CheckCircle2 } from 'lucide-react';
 
 import imgSkylineNight from '../assets/images/gtc_night_skyline_1785228886203.jpg';
 import imgPrismTower from '../assets/images/prism_pwc_twilight_1785228945932.jpg';
@@ -267,7 +267,9 @@ export const PhotoShowcaseSection: React.FC = () => {
                   <div className="relative aspect-[3/4] w-full overflow-hidden bg-black/60">
                     <img
                       src={photo.imgUrl}
-                      alt={photo.title}
+                      alt={`${photo.title} - Photography & Color Grading by Daniel Muiruri, ${photo.location}`}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-700 ease-out"
                       referrerPolicy="no-referrer"
                     />
@@ -352,7 +354,7 @@ export const PhotoShowcaseSection: React.FC = () => {
                         <p className="text-[11px] font-outfit text-white/40">{sample.category}</p>
                       </div>
                       {activeSampleId === sample.id && (
-                        <Sparkles className="w-4 h-4 text-cyan-400 shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
                       )}
                     </button>
                   ))}
@@ -387,7 +389,7 @@ export const PhotoShowcaseSection: React.FC = () => {
                 </span>
                 <span className="text-[11px] text-cyan-400 font-outfit font-medium">Drag middle slider to compare</span>
                 <span className="flex items-center gap-1.5 text-emerald-400">
-                  <Sparkles className="w-3.5 h-3.5" />
+                  <SlidersHorizontal className="w-3.5 h-3.5" />
                   <span>RETOUCHED & GRADED</span>
                 </span>
               </div>
@@ -559,7 +561,9 @@ export const PhotoShowcaseSection: React.FC = () => {
             <div className="lg:w-7/12 relative bg-black flex items-center justify-center min-h-[300px] lg:min-h-[500px]">
               <img
                 src={lightboxPhoto.imgUrl}
-                alt={lightboxPhoto.title}
+                alt={`${lightboxPhoto.title} - Creative Retouching & Photography by Daniel Muiruri, ${lightboxPhoto.location}`}
+                loading="lazy"
+                decoding="async"
                 className="max-h-[70vh] lg:max-h-[85vh] w-auto max-w-full object-contain p-2"
                 referrerPolicy="no-referrer"
               />
@@ -609,7 +613,7 @@ export const PhotoShowcaseSection: React.FC = () => {
               {/* Editing Breakdown */}
               <div className="space-y-2">
                 <p className="text-[11px] font-outfit font-semibold uppercase tracking-wider text-white/50 flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                  <Sliders className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Editing & Grading Techniques</span>
                 </p>
                 <ul className="space-y-1.5">

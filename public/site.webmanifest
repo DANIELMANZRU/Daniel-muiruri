@@ -1,0 +1,16 @@
+{
+  "name": "Daniel Muiruri - Portfolio & CV",
+  "short_name": "Daniel Muiruri",
+  "description": "Professional portfolio and interactive CV for Daniel Muiruri Itugi: Full-Stack Developer, ICT Infrastructure Engineer, Cybersecurity & Space Digital Infrastructure Researcher",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

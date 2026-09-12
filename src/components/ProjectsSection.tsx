@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Project } from '../types';
 import { cvData } from '../data/cvData';
-import { Code2, ExternalLink, CheckCircle2, Clock, Sparkles, Folder, Layers, ShieldCheck, ArrowUpRight } from 'lucide-react';
+import { Code2, ExternalLink, CheckCircle2, Clock, Folder, Layers, ShieldCheck, ArrowUpRight } from 'lucide-react';
 import { SpotlightCard } from './SpotlightCard';
 import { ProjectDetailModal } from './ProjectDetailModal';
 import { soundEffects } from '../utils/soundEffects';
@@ -16,10 +16,11 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onShowToast })
 
   const categories = [
     { id: 'all', label: 'All Projects' },
+    { id: 'research', label: 'Space & Remote Sensing' },
     { id: 'web', label: 'Web & Portals' },
     { id: 'mobile', label: 'Mobile Apps' },
     { id: 'systems', label: 'Systems & DB' },
-    { id: 'branding', label: 'Branding & Design' },
+    { id: 'branding', label: 'Branding & Media' },
     { id: 'automation', label: 'Scripting & Automation' },
   ];
 

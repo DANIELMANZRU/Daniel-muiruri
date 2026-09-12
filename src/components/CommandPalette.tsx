@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, FileText, Printer, Mail, ExternalLink, Briefcase, GraduationCap, Code2, Sparkles, X, Terminal, ArrowRight, Phone } from 'lucide-react';
+import { Search, FileText, Printer, Mail, ExternalLink, Briefcase, GraduationCap, Code2, Cpu, X, Terminal, ArrowRight, Phone } from 'lucide-react';
 import { cvData } from '../data/cvData';
 import { soundEffects } from '../utils/soundEffects';
 
@@ -84,7 +84,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       id: 'sec-skills',
       title: 'Jump to Skills & Competencies',
       category: 'Navigation',
-      icon: <Sparkles className="w-4 h-4 text-white/60" />,
+      icon: <Cpu className="w-4 h-4 text-white/60" />,
       action: () => scrollTo('skills'),
     },
     {
@@ -114,6 +114,16 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     {
       id: 'doc-print-cv',
       title: 'Open Printable Official CV',
+      category: 'Documents',
+      icon: <Printer className="w-4 h-4 text-emerald-400" />,
+      action: () => {
+        onClose();
+        onOpenPrintCv();
+      },
+    },
+    {
+      id: 'doc-download-pdf',
+      title: 'Download Official CV (.PDF)',
       category: 'Documents',
       icon: <Printer className="w-4 h-4 text-emerald-400" />,
       action: () => {

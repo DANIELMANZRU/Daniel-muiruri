@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { cvData } from '../data/cvData';
-import { Code2, Cloud, Palette, Wrench, Search, CheckCircle2, Award, Sparkles, BookOpen } from 'lucide-react';
+import { Code2, Cloud, Palette, Wrench, Search, CheckCircle2, Award, BookOpen } from 'lucide-react';
 import { SpotlightCard } from './SpotlightCard';
 
 export const SkillsSection: React.FC = () => {

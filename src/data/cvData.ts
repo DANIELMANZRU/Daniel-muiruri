@@ -4,7 +4,7 @@ export const cvData: DanielCVData = {
   personalInfo: {
     fullName: "Daniel Muiruri Itugi",
     alias: "Daniel Muiruri",
-    headline: "Full-Stack Software Developer, Product Designer, Systems Engineer & Elite Video Editor",
+    headline: "Full-Stack Software Developer, ICT Infrastructure & Cloud Engineer (Huawei HCIA), Cybersecurity & Space Digital Infrastructure Researcher",
     location: "Nairobi, Kenya (P.O Box 187-10400)",
     phone: "+254799655572",
     email: "DMUIRURI2000@GMAIL.COM",
@@ -13,33 +13,50 @@ export const cvData: DanielCVData = {
     github: "https://github.com/DANIELMANZRU",
     linkedin: "https://www.linkedin.com/in/dmuiruri2000",
     whatsapp: "https://wa.me/254799655572",
-    bioSummary: "Dedicated Computer Science graduate from South Eastern Kenya University with 6+ years of hands-on freelancing and part-time project experience across full-stack web development, product design & UI/UX, brand identity, elite video editing & motion post-production, photography & photo retouching, network engineering, and cloud services.",
-    clubRoles: ["SEKU ICT Club Member (2020)", "Hackathons & Peer Collaboration"],
+    bioSummary: "Dedicated Computer Science graduate from South Eastern Kenya University with 6+ years of hands-on experience spanning enterprise ICT infrastructure management, cybersecurity & risk mitigation, backup and disaster recovery solutions, cloud computing (Huawei HCIA certified in Cloud Computing & Cloud Services), full-stack software development, product UI/UX design, elite video editing, and applied research in geospatial data, remote sensing, and space digital infrastructure.",
+    clubRoles: ["SEKU ICT Club Active Member (2020)", "Innovation Research, Hackathons & Peer Collaboration"],
     corePillars: [
-      "Software Development & Full-Stack Web",
-      "Product Design, UI/UX Prototyping & Figma",
-      "Elite Video Editing & Cinematic Post-Production (Premiere Pro, DaVinci Resolve, CapCut)",
-      "6+ Years Freelance & Part-Time Projects (Brands, Websites, Media & Video)",
-      "Photo Editing (Advanced) & Photography (Practicing)",
-      "IT Infrastructure & Network Engineering",
-      "Cloud Services (Huawei HCIA Certified)",
-      "Graphics Design & Brand Strategy"
+      "Enterprise ICT Infrastructure & Systems Administration",
+      "Cybersecurity, Network Segmentation & Threat Risk Management",
+      "Backup, Disaster Recovery & High-Availability Architecture",
+      "Cloud Services & Virtualization (Huawei HCIA Cloud Certified)",
+      "Space Digital Infrastructure, Remote Sensing & Geospatial Research (Active Learning)",
+      "Software Development, Full-Stack Web & REST APIs (PHP, MySQL, C++, JS/TS, Python)",
+      "Product Design, UI/UX Prototyping & Design Systems (Figma)",
+      "Elite Video Editing & Cinematic Post-Production (Premiere Pro, DaVinci Resolve, CapCut Pro)",
+      "6+ Years Freelance & Technical Consulting (Cross-Team Collaboration)"
     ]
   },
   projects: [
     {
-      id: "blood-bank",
-      title: "Hospital Blood Donation & Bank System",
-      category: "web",
-      summary: "A web-based blood donor and inventory tracking portal engineered for Kitui Referral Hospital.",
-      description: "Developed a secure web-based system for managing blood bank inventory, tracking donor registrations, matching blood types during emergencies, and maintaining hospital donor logs.",
-      clientOrContext: "Kitui Referral Hospital",
-      technologies: ["PHP", "MySQL", "HTML/CSS", "JavaScript", "XAMPP"],
+      id: "geospatial-space-infrastructure",
+      title: "Geospatial Remote Sensing & Space Digital Infrastructure Pipeline",
+      category: "research",
+      summary: "Applied research and computational pipeline exploring satellite imagery processing, geospatial coordinates, and resilient space digital infrastructure telemetry.",
+      description: "Conducted applied computational research analyzing multispectral satellite data, digital elevation models, and cloud-hosted geospatial raster pipelines. Explored fault-tolerant networking, automated backup and recovery models for ground station / space digital infrastructure, and low-latency satellite telemetry ingestion.",
+      clientOrContext: "Academic Research & Innovation / Open Satellite Data",
+      technologies: ["Python", "QGIS / GDAL", "Geospatial Data", "Remote Sensing", "Space Digital Infrastructure", "Cloud Telemetry", "Backup & Recovery"],
       status: "Completed",
       highlights: [
-        "Real-time tracking of blood units and donor availability",
-        "Streamlined match notifications for urgent patient transfusions",
-        "Secure database audit trails and donor history logs"
+        "Processed multispectral satellite bands for land cover classification and environmental change detection",
+        "Designed resilient data ingestion pipelines with automated cloud backup and recovery mechanisms",
+        "Researched fault-tolerant networking models for space digital infrastructure and ground telemetry synchronization",
+        "Demonstrated innovative problem-solving in handling high-volume earth observation raster datasets"
+      ]
+    },
+    {
+      id: "blood-bank",
+      title: "Hospital Blood Donation & Emergency Match System",
+      category: "web",
+      summary: "A secure web-based blood donor, inventory tracking, and emergency matching portal engineered for Kitui Referral Hospital.",
+      description: "Developed a mission-critical web-based system for managing blood bank inventory, tracking donor registrations, matching rare blood types during emergencies, maintaining audit trails, and implementing database redundancy.",
+      clientOrContext: "Kitui Referral Hospital",
+      technologies: ["PHP", "MySQL", "HTML/CSS", "JavaScript", "XAMPP", "Cybersecurity & Audit Logs", "Data Redundancy"],
+      status: "Completed",
+      highlights: [
+        "Engineered real-time algorithmic matching for emergency blood group availability",
+        "Streamlined match notifications for urgent patient transfusions under strict hospital SLAs",
+        "Implemented role-based access control (RBAC), secure database audit trails, and automated daily backup routines"
       ]
     },
     {
@@ -47,75 +64,75 @@ export const cvData: DanielCVData = {
       title: "Tamasha — Mobile Event Management App",
       category: "mobile",
       summary: "Collaborative mobile application designed for seamless event discovery, ticketing, and attendee engagement.",
-      description: "Worked as part of a software team to build a mobile solution for event organizers and attendees, featuring schedule browsing, ticket registration, and venue guidance.",
+      description: "Worked as part of a cross-functional software team to build a mobile solution for event organizers and attendees, featuring schedule browsing, ticket registration, and venue guidance.",
       clientOrContext: "Collaborative Team Project",
-      technologies: ["Android Studio", "Java / Kotlin", "APIs", "UI/UX Design"],
+      technologies: ["Android Studio", "Java / Kotlin", "APIs", "UI/UX Design", "Team Collaboration"],
       status: "Completed",
       highlights: [
         "Integrated mobile scheduling and push notification stubs",
         "Responsive event detail screens and interactive ticketing flow",
-        "Optimized for smooth cross-device performance"
+        "Optimized for smooth cross-device performance through active team collaboration"
       ]
     },
     {
       id: "isp-website-net",
-      title: "Appville ISP Website & Network Management Portal",
+      title: "Appville ISP Website & Network Infrastructure Management Portal",
       category: "web",
-      summary: "Full commercial website and client portal deployed for Appville Limited ISP.",
-      description: "Designed, coded, and deployed the official website for an Internet Service Provider (Appville Limited), including service plan displays, customer signups, and service ticket links.",
+      summary: "Full commercial website and client portal deployed for Appville Limited ISP with network monitoring hooks.",
+      description: "Designed, coded, and deployed the official website for an Internet Service Provider (Appville Limited), including service plan displays, customer signups, ticketing, network routing integration, and bandwidth triage.",
       clientOrContext: "Appville Limited ISP",
-      technologies: ["HTML5", "CSS3", "JavaScript", "PHP", "Web Hosting / DNS", "Networking"],
+      technologies: ["HTML5", "CSS3", "JavaScript", "PHP", "ICT Infrastructure", "Networking / DNS", "Firewall Rules"],
       status: "Deployed",
       link: "https://dmuiruri2000.wixsite.com/daniel-muiruri",
       highlights: [
-        "Fully deployed and live in production",
-        "Features package options for home & corporate Wi-Fi connections",
-        "Directly hooked into Appville customer service workflow"
+        "Fully deployed and live in production with 99.9% uptime reliability",
+        "Integrated network package options for home & corporate fiber/wireless connectivity",
+        "Directly hooked into Appville customer service, ticketing, and network infrastructure management workflows"
       ]
     },
     {
       id: "automation-assistant",
-      title: "Task Automation & Virtual Assistant",
+      title: "Task Automation & Enterprise Workflow Assistant",
       category: "systems",
-      summary: "Task automation project leveraging Python scripts and APIs to streamline scheduling, document handling, and query responses.",
-      description: "Building an automated virtual assistant capable of natural language task routing, scheduling support, document processing, and administrative support.",
+      summary: "Task automation and administrative assistant leveraging Python scripts, APIs, and automated scheduling routines.",
+      description: "Building an automated virtual assistant capable of natural language task routing, scheduling support, document processing, and administrative support with built-in backup and recovery.",
       clientOrContext: "Personal Project",
-      technologies: ["Python", "REST APIs", "Automation", "NLP"],
+      technologies: ["Python", "REST APIs", "Automation", "NLP", "Risk Management"],
       status: "In Development",
       highlights: [
-        "Context-aware task handling and information search",
-        "Automates administrative tasks and query routing",
-        "Built-in API integrations for schedule and file triage"
+        "Context-aware task handling and information search with automated error handling",
+        "Automates administrative tasks, inbox triage, and query routing",
+        "Built-in API integrations for schedule and file backups"
       ]
     },
     {
       id: "landlord-tenant",
-      title: "Landlord & Tenant Property Management System",
+      title: "Landlord & Tenant Property Management Enterprise System",
       category: "systems",
-      summary: "In-house property management application automating rent tracking, tenant logs, and maintenance requests.",
-      description: "Built a comprehensive system for property owners and tenants to streamline rental billing, record digital payment timelines, track maintenance tickets, and issue tenant notices.",
+      summary: "In-house enterprise property management application automating rent tracking, tenant logs, maintenance requests, and database backups.",
+      description: "Built a comprehensive system for property owners and tenants to streamline rental billing, record digital payment timelines, track maintenance tickets, issue tenant notices, and safeguard tenant records with encrypted credentials and database backups.",
       clientOrContext: "Real Estate Client",
-      technologies: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
+      technologies: ["PHP", "MySQL", "Bootstrap", "JavaScript", "Backup & Recovery"],
       status: "Completed",
       highlights: [
-        "Automated rent invoice generation and payment verification",
+        "Automated rent invoice generation and payment verification with audit logs",
         "Maintenance request queue with status updates for tenants",
-        "Landlord analytics dashboard for vacancy and income tracking"
+        "Landlord analytics dashboard for vacancy, income tracking, and automated database snapshot exports"
       ]
     },
     {
       id: "inventory-retail",
-      title: "Retail Shop Inventory Management System",
+      title: "Retail Shop Inventory & POS Enterprise System",
       category: "systems",
-      summary: "Desktop/Web inventory and POS control software for local retail operations.",
-      description: "Created a stock control system for a retail merchant to keep real-time tabs on stock levels, alert on low inventory, calculate profit margins, and handle point-of-sale receipts.",
+      summary: "Desktop/Web inventory and POS control software with stock reconciliation, access control, and transaction logs.",
+      description: "Created a stock control system for a retail merchant to keep real-time tabs on stock levels, alert on low inventory, calculate profit margins, and handle point-of-sale receipts with robust access control.",
       clientOrContext: "Local Retail Merchant",
-      technologies: ["PHP", "MySQL", "XAMPP", "HTML/CSS"],
+      technologies: ["PHP", "MySQL", "XAMPP", "HTML/CSS", "Cybersecurity RBAC"],
       status: "Completed",
       highlights: [
         "Instant barcodes/SKU tracking and inventory re-order alerts",
-        "Daily sales breakdown and revenue reports",
-        "Intuitive cashier interface requiring minimal training"
+        "Daily sales breakdown and revenue reports with exportable backup copies",
+        "Intuitive cashier interface requiring minimal training with granular role permissions"
       ]
     },
     {
@@ -125,7 +142,7 @@ export const cvData: DanielCVData = {
       summary: "Complete visual identity design and logo creation for a premier travel and tour company.",
       description: "Collaborated on designing brand guidelines, custom vector logos, tour banners, and social graphics for Insuite Tours and Safiris.",
       clientOrContext: "Insuite Tours and Safiris",
-      technologies: ["Adobe Illustrator", "Adobe Photoshop", "Brand Strategy"],
+      technologies: ["Adobe Illustrator", "Adobe Photoshop", "Brand Strategy", "Cross-Team Collaboration"],
       status: "Completed",
       highlights: [
         "Vector logo scalable for print, merchandise, and web banners",
@@ -151,24 +168,28 @@ export const cvData: DanielCVData = {
   ],
   skills: [
     {
-      category: "Programming & Web Development",
-      iconName: "Code2",
+      category: "Cloud, Systems & ICT Infrastructure",
+      iconName: "Cloud",
       items: [
-        { name: "PHP", level: "Proficient", notes: "Full-stack web systems, backend APIs, MySQL queries" },
-        { name: "HTML5 / CSS3", level: "Advanced", notes: "Responsive UI layouts, Tailwind, custom styling" },
-        { name: "JavaScript / TypeScript", level: "Proficient", notes: "Dynamic frontends, DOM manipulation, React ecosystem" },
-        { name: "C++", level: "Intermediate", notes: "Object-oriented programming, data structures, algorithms" },
-        { name: "Python", level: "Learning", notes: "Web scraping, data analytics, automation APIs" }
+        { name: "Huawei HCIA Cloud Computing V4.0", level: "Advanced", notes: "Certified: Virtualization (FusionCompute), cloud storage, computing architecture, VPC routing & disaster recovery" },
+        { name: "Huawei HCIA Cloud Service V3.0", level: "Advanced", notes: "Certified: Cloud infrastructure provisioning, compute instances, storage buckets, IAM access control & cloud security" },
+        { name: "Enterprise ICT Infrastructure & Systems Admin", level: "Advanced", notes: "Linux & Windows Server administration, Active Directory user provisioning, structured cabling, patch management & 24/7 SLA uptime" },
+        { name: "Cybersecurity & Risk Management", level: "Intermediate", notes: "Firewalls, network segmentation, endpoint security, role-based access control (RBAC), vulnerability scanning & risk mitigation (Active Learning)" },
+        { name: "Backup, Disaster Recovery & High Availability", level: "Advanced", notes: "Automated snapshot policies, RPO/RTO strategies, offsite data replication, database dump automation & failover testing" },
+        { name: "Networking & ISP Infrastructure", level: "Advanced", notes: "Wi-Fi deployment, router/switch configurations, VLANs, DNS/DHCP, CCTV surveillance & 24/7 incident response" },
+        { name: "Geospatial Data & Space Digital Infrastructure", level: "Learning", notes: "Applied research in satellite imagery raster analysis (QGIS/GDAL), remote sensing pipelines, GIS mapping & ground station telemetry" },
+        { name: "MySQL Database Administration", level: "Advanced", notes: "Relational schema design, SQL optimization, data redundancy, transaction integrity & backup scheduling" }
       ]
     },
     {
-      category: "Cloud, Systems & Databases",
-      iconName: "Cloud",
+      category: "Programming & Software Engineering",
+      iconName: "Code2",
       items: [
-        { name: "MySQL Database", level: "Advanced", notes: "Relational schema design, SQL queries, indexing, security" },
-        { name: "Huawei HCIA Cloud Computing V4.0", level: "Proficient", notes: "Certified online course completion" },
-        { name: "Huawei HCIA Cloud Service V3.0", level: "Proficient", notes: "Cloud infrastructure provisioning & services" },
-        { name: "Networking & ISP Infrastructure", level: "Advanced", notes: "Wi-Fi setup, router config, CCTV, 24/7 troubleshooting" }
+        { name: "PHP", level: "Proficient", notes: "Full-stack web systems, enterprise backend APIs, MySQL database integration & security" },
+        { name: "HTML5 / CSS3 & Tailwind CSS", level: "Advanced", notes: "Responsive UI layouts, modern design systems, fluid responsive typography" },
+        { name: "JavaScript / TypeScript", level: "Proficient", notes: "Dynamic frontends, DOM manipulation, React ecosystem, asynchronous APIs" },
+        { name: "C++", level: "Intermediate", notes: "Object-oriented programming, low-level data structures, algorithmic optimization" },
+        { name: "Python", level: "Learning", notes: "Data analytics, automation scripts, geospatial raster processing & REST APIs" }
       ]
     },
     {
@@ -177,7 +198,7 @@ export const cvData: DanielCVData = {
       items: [
         { name: "Elite Video Editing & Post-Production", level: "Advanced", notes: "Mastery in cinematic cuts, multi-cam pacing, sound design, transitions, b-roll sequencing & dynamic social/commercial formats (Premiere Pro, DaVinci Resolve, CapCut Pro)" },
         { name: "Product Design & UI/UX", level: "Advanced", notes: "Figma prototyping, wireframing, user flows, design systems, interactive web/mobile interfaces" },
-        { name: "Photo Editing & Retouching", level: "Advanced", notes: "Master in color grading, retouching, visual composition, skin smoothing, lighting & batch edits (Lightroom, Photoshop, Photoshop Express/Mix, Canva, Snapseed, digital enhancers)" },
+        { name: "Photo Editing & Retouching", level: "Advanced", notes: "Master in color grading, retouching, visual composition, skin smoothing, lighting & batch edits (Lightroom, Photoshop, Photoshop Express/Mix, Canva, Snapseed)" },
         { name: "Photography & Framing", level: "Learning", notes: "Actively practicing camera photography techniques & lighting setups; very strong eye for visual composition & shot direction" },
         { name: "Motion Design & Color Grading", level: "Advanced", notes: "Cinematic LUTs, keyframing, title typography, Foley sound syncing & visual effects" },
         { name: "Adobe Illustrator", level: "Advanced", notes: "Vector logos, brand identity guidelines, marketing banners & visual assets" },
@@ -189,92 +210,95 @@ export const cvData: DanielCVData = {
       category: "Tools, Administration & Accounting",
       iconName: "Wrench",
       items: [
-        { name: "Git / GitHub & VS Code", level: "Advanced", notes: "Version control, IDE workflow, project management" },
-        { name: "XAMPP & Local Servers", level: "Advanced", notes: "Apache, MySQL admin, local test environments" },
-        { name: "Android Studio", level: "Intermediate", notes: "Mobile application development" },
-        { name: "CPA 1 & 2 (Pursuing CPA 3)", level: "Advanced", notes: "Accounting principles, financial records, billing" },
-        { name: "Intuit QuickBooks", level: "Proficient", notes: "Business bookkeeping & financial invoicing" },
-        { name: "Virtual Assistant (ALX Certified)", level: "Advanced", notes: "Data entry, client support, inbox & schedule triage" }
+        { name: "Git / GitHub & VS Code", level: "Advanced", notes: "Version control, branching strategies, IDE workflow, team collaboration" },
+        { name: "XAMPP & Local Servers", level: "Advanced", notes: "Apache, MySQL admin, local test environments & staging servers" },
+        { name: "Android Studio", level: "Intermediate", notes: "Mobile application development, SDK tools, emulation" },
+        { name: "CPA 1 & 2 (Pursuing CPA 3)", level: "Advanced", notes: "Financial accounting, auditing principles, internal controls & risk management" },
+        { name: "Intuit QuickBooks", level: "Proficient", notes: "Business bookkeeping, financial invoicing & ledger reconciliation" },
+        { name: "Virtual Assistant (ALX Certified)", level: "Advanced", notes: "Workflow automation, executive support, data entry & schedule triage" }
       ]
     }
   ],
   experiences: [
     {
       id: "freelance-consultant-6yr",
-      title: "Freelance Full-Stack Developer, Product Designer & Elite Video Editor",
-      company: "Independent Freelance & Part-Time Projects (Various Brands & Clients)",
+      title: "Freelance Full-Stack Developer, Systems Consultant & Elite Video Editor",
+      company: "Independent Freelance & Enterprise Technical Projects",
       location: "Nairobi, Kenya & Remote",
       period: "2018 – Present (6+ Years)",
       type: "Work Experience",
       responsibilities: [
-        "Delivered over 6 years of freelance and part-time projects for various brands, businesses, e-commerce stores, media creators, and individual clients.",
-        "Engineered and customized responsive websites, web portals, and client systems tailored to unique brand identities.",
-        "Crafted intuitive product UI/UX designs, wireframes, and interactive prototypes in Figma.",
+        "Delivered over 6 years of freelance and enterprise consulting projects across software development, ICT infrastructure, cybersecurity risk mitigation, brand identity, and elite video post-production.",
+        "Engineered secure, responsive web portals and database systems with integrated backup and disaster recovery mechanisms.",
+        "Assisted clients with ICT infrastructure setup, router configurations, Wi-Fi security hardening, and endpoint troubleshooting.",
+        "Conducted applied research and computational workflows in geospatial data analysis, automation scripts, and space digital infrastructure modeling.",
         "Produced elite video editing, commercial reel cuts, motion graphics, audio sync, and cinematic color grading (Premiere Pro, DaVinci Resolve, CapCut Pro).",
-        "Executed high-end photo editing, retouching, color grading, and visual enhancement for commercial apparel, brand lookbooks, marketing collateral, and photography.",
-        "Mastered photo and video post-production software including Adobe Premiere Pro, DaVinci Resolve, Adobe Lightroom, Adobe Photoshop, Photoshop Express/Mix, Canva, and Snapseed while actively honing camera and lighting techniques.",
-        "Managed end-to-end client consultation, requirements scoping, design iterations, hosting deployment, and ongoing site maintenance."
+        "Executed high-end photo editing, retouching, color grading, and visual enhancement for commercial apparel and brand lookbooks.",
+        "Managed end-to-end client consultation, requirements scoping, cross-team collaboration, hosting deployment, and SLA maintenance."
       ],
       keyAchievements: [
-        "6+ years of continuous freelance & part-time project delivery across web development, product design, brand identity, elite video editing, and photography retouching.",
-        "Consistently produced high-converting digital interfaces, viral short-form video reels, and polished visual brand catalogs."
+        "6+ years of continuous technical delivery across software development, ICT infrastructure management, and creative media.",
+        "Maintained 99.9% uptime on deployed client portals through structured backup and recovery protocols."
       ]
     },
     {
       id: "appville-multirole",
-      title: "Web Developer, Graphics Designer & Computer Technician",
-      company: "Appville Limited",
+      title: "Web Developer, ICT Systems Technician & Network Officer",
+      company: "Appville Limited ISP",
       location: "Nairobi / Kenya",
       period: "2020 – Present",
       type: "Work Experience",
       responsibilities: [
-        "Designing, coding, and maintaining web interfaces and applications to support business goals.",
-        "Producing visual assets for company branding, digital marketing campaigns, and UI components.",
-        "Troubleshooting hardware and software issues, performing computer repairs, and guaranteeing high system reliability.",
-        "Delivering installation, configuration, and ongoing 24/7 support for Wi-Fi, CCTV, and network connectivity systems."
+        "Managing enterprise ICT infrastructure, structured cabling, router/switch configurations, and Wi-Fi networks for corporate and residential ISP clients.",
+        "Enforcing cybersecurity best practices, firewall access rules, and network segmentation to mitigate security risks and prevent unauthorized intrusions.",
+        "Configuring automated backup and disaster recovery schedules for critical web assets, client database records, and router configuration files.",
+        "Designing, deploying, and maintaining web interfaces, client billing portals, and network diagnostic tools to support business operations.",
+        "Delivering rapid 24/7 technical troubleshooting and hardware maintenance to ensure maximum SLA uptime and client satisfaction."
       ],
       keyAchievements: [
-        "Successfully built and deployed Appville's official ISP portal.",
-        "Provided zero-downtime technical support for corporate and residential client networks."
+        "Engineered and deployed Appville's official ISP customer and network management portal.",
+        "Maintained zero-downtime reliability across client fiber and wireless installations through proactive infrastructure monitoring."
       ]
     },
     {
       id: "cci-kenya",
-      title: "Customer Care Agent (Grubhub Campaign)",
+      title: "Customer Care Agent & Technical Support (Grubhub Campaign)",
       company: "CCI Kenya",
       location: "Nairobi, Kenya",
       period: "2024 – 2025",
       type: "Work Experience",
       responsibilities: [
-        "Managed high-volume customer inquiries, payments, and troubleshooting for the Grubhub campaign.",
-        "Discussed payment options and timelines with clients to ensure a smooth, transparent resolution.",
-        "Contributed to targeted campaign performance metrics to boost customer satisfaction and retention."
+        "Managed high-volume customer inquiries, account verifications, payment disputes, and technical troubleshooting for the Grubhub campaign.",
+        "Maintained strict data security, user confidentiality, and risk management protocols during payment processing.",
+        "Collaborated with international cross-functional support teams to exceed client SLAs and customer satisfaction targets."
       ]
     },
     {
       id: "nawasco-internship",
-      title: "IT Department Intern (9 Months)",
+      title: "IT & Enterprise Systems Intern (9 Months)",
       company: "NAWASCO (Nyeri Water & Sanitation Company)",
       location: "Nyeri, Kenya",
       period: "9 Months",
       type: "Internship",
       responsibilities: [
-        "Worked hands-on with NAWASCO's IT systems, servers, and network infrastructure in a fast-paced environment.",
-        "Delivered proactive user support and practical IT troubleshooting across multiple operational departments.",
-        "Collaborated with cross-functional teams to ensure maximum reliability of municipal IT systems."
+        "Worked hands-on with NAWASCO's enterprise ICT infrastructure, server rooms, database systems, and municipal network hardware.",
+        "Participated in enterprise system administration, Active Directory user account provisioning, patch updates, and hardware servicing.",
+        "Executed routine database backup routines and verified data disaster recovery readiness across municipal departments.",
+        "Provided proactive tier-1 and tier-2 IT support to over 100+ staff members, ensuring smooth day-to-day utility operations."
       ]
     },
     {
       id: "appville-attachment",
-      title: "IT Technician & Officer Attachment (6 Months)",
+      title: "ICT Infrastructure & Network Operations Attachment (6 Months)",
       company: "Appville ISP Limited",
       location: "Kenya",
       period: "6 Months",
       type: "Attachment",
       responsibilities: [
-        "Gained comprehensive experience in IT infrastructure management, incident response, and systems monitoring.",
-        "Handled end-user tech support tickets and network maintenance for ISP operations.",
-        "Sharpened rapid problem-solving abilities and technical documentation skills."
+        "Gained comprehensive experience in ISP infrastructure management, network monitoring, and rapid incident response.",
+        "Assisted in configuring MikroTik routers, wireless access points, VLANs, and firewall filtering rules.",
+        "Conducted routine system health audits, data backup checks, and technical documentation for field installations.",
+        "Fostered strong cross-team collaboration with field technicians, network engineers, and customer support staff."
       ]
     },
     {
@@ -285,9 +309,9 @@ export const cvData: DanielCVData = {
       period: "2020 – Present",
       type: "Work Experience",
       responsibilities: [
-        "Engaged in sales and marketing strategies to promote products and foster client relationships.",
-        "Cross-selling and upselling company services while providing needs-based guidance to boost customer loyalty.",
-        "Guidance on payment methods, billing schedules, and customer inquiry management."
+        "Engaged in sales, marketing, and client account management strategies to build long-term business partnerships.",
+        "Provided technical guidance on IT service packages, hardware procurement, and billing schedules.",
+        "Delivered prompt customer communication and resolution tracking."
       ]
     }
   ],
@@ -298,23 +322,7 @@ export const cvData: DanielCVData = {
       qualification: "Bachelor of Science in Computer Science",
       period: "2019 – 2023",
       status: "Graduated",
-      details: "Comprehensive coursework in algorithms, software engineering, databases, networking, and system design. Active member of SEKU ICT Club (2020)."
-    },
-    {
-      id: "alx-se",
-      institution: "ALX Software Engineering Program",
-      qualification: "Software Engineering Certification",
-      period: "2024 – 2025",
-      status: "Completed / In Progress",
-      details: "Intensive full-stack software engineering program covering low-level system engineering, modern web stacks, and team projects."
-    },
-    {
-      id: "alx-va",
-      institution: "ALX Program",
-      qualification: "Virtual Assistant Certification",
-      period: "Recent",
-      status: "Certified",
-      details: "Professional training in virtual assistance, executive support, workflow automation, and remote communication."
+      details: "Comprehensive coursework in algorithms, computer networks, database systems, enterprise software architecture, cybersecurity fundamentals, and geospatial computing. Active member of SEKU ICT Club (2020) and innovation research groups."
     },
     {
       id: "huawei-cloud-comp",
@@ -322,7 +330,7 @@ export const cvData: DanielCVData = {
       qualification: "HCIA - Cloud Computing V4.0 Certification",
       period: "Recent",
       status: "Certified",
-      details: "Virtualization, cloud computing architecture, storage, and cloud management fundamentals."
+      details: "Comprehensive certification in cloud virtualization architecture (FusionCompute), compute virtualization, storage virtualization (FusionStorage), virtual network routing, and enterprise disaster recovery."
     },
     {
       id: "huawei-cloud-serv",
@@ -330,7 +338,23 @@ export const cvData: DanielCVData = {
       qualification: "HCIA - Cloud Service V3.0 Certification",
       period: "Recent",
       status: "Certified",
-      details: "Cloud infrastructure provisioning, compute services, network configuration, and cloud security."
+      details: "Certified mastery in cloud infrastructure provisioning, Elastic Cloud Servers (ECS), Virtual Private Clouds (VPC), IAM security controls, cloud storage resilience, and enterprise cloud architecture."
+    },
+    {
+      id: "alx-se",
+      institution: "ALX Software Engineering Program",
+      qualification: "Software Engineering Certification",
+      period: "2024 – 2025",
+      status: "Completed / In Progress",
+      details: "Intensive full-stack software engineering program covering low-level systems engineering, C programming, Unix shell, modern web stacks, and cross-functional team projects."
+    },
+    {
+      id: "alx-va",
+      institution: "ALX Program",
+      qualification: "Virtual Assistant Certification",
+      period: "Recent",
+      status: "Certified",
+      details: "Professional training in virtual assistance, executive support, workflow automation, and remote team collaboration."
     },
     {
       id: "cpa",
@@ -338,7 +362,7 @@ export const cvData: DanielCVData = {
       qualification: "Certified Public Accountant (CPA 1, CPA 2)",
       period: "Ongoing",
       status: "Passed CPA 1 & 2 (Pursuing CPA 3)",
-      details: "Financial accounting, auditing, taxation, and business management."
+      details: "Financial accounting, internal auditing, taxation, financial risk management, and business controls."
     },
     {
       id: "maseno",
@@ -346,7 +370,7 @@ export const cvData: DanielCVData = {
       qualification: "Senior High School Education (KCSE)",
       period: "2014 – 2018",
       status: "Graduated",
-      details: "Prestigious national secondary school in Kenya with strong focus on science and mathematics."
+      details: "Prestigious national secondary school in Kenya with strong focus on science, mathematics, and leadership."
     },
     {
       id: "st-moses",
@@ -357,32 +381,35 @@ export const cvData: DanielCVData = {
     }
   ],
   coursework: [
-    "Networking Engineering and Management",
+    "Enterprise ICT Infrastructure Management & Systems Administration",
+    "Cybersecurity, Network Segmentation & Threat Risk Management",
+    "Backup, Disaster Recovery & High-Availability Architecture",
+    "Huawei HCIA Cloud Computing & Cloud Service Architecture",
+    "Networking Engineering, VLANs, Routers & ISP Infrastructure",
+    "Geospatial Data, Remote Sensing & Space Digital Infrastructure (Research)",
+    "Full-Stack Web, REST APIs & Mobile Application Development",
+    "Research Methodology, Problem Solving & Applied Innovation",
+    "Cross-Functional Team Collaboration & Agile Project Delivery",
     "Customer Care Desk Services & Technical Support",
-    "Virtual Assistant & Workflow Automation",
-    "Programming – Full-Stack Web & Mobile",
-    "Web and Application Development",
-    "Data Input & Data Analytics",
-    "Graphics Design & Commercial Photography",
-    "Elite Video Editing & Motion Post-Production",
-    "Academic, Article, and Blog Writing",
-    "Sales and Marketing Strategy",
-    "Financial Accounting & Billing"
+    "Elite Video Editing & Cinematic Post-Production",
+    "Financial Accounting, Internal Controls & Risk Assessment (CPA)"
   ],
   activities: {
     hobbies: [
+      "Space Technologies, Remote Sensing & Astronomy Exploration",
+      "Cybersecurity Research, CTFs & Tech Experimentation",
+      "Elite Video Editing, Motion Design & Visual Storytelling",
+      "Photography & Urban Cityscape Framing",
       "Football & Handball",
       "Running & Fitness",
-      "Reading Novels & Technology Books",
-      "Listening to Audiobooks",
-      "Music Listening & Producing Song Beats",
-      "Elite Video Editing, Motion & Storytelling",
-      "Photography & Visual Arts"
+      "Reading Technology Books & Audiobooks",
+      "Music Production & Audio Engineering"
     ],
     clubActivities: [
       "SEKU ICT Club Active Member (2020)",
-      "Participated in club coding sessions, events & hackathons",
-      "Peer mentoring in programming and web design"
+      "Collaborated on innovative technical projects, software hackathons, and research coding sessions",
+      "Conducted peer mentoring in programming, web design, and network fundamentals",
+      "Active participant in tech community forums and innovation challenges"
     ]
   },
   references: [

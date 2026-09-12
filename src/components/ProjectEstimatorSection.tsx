@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calculator, Check, ArrowRight, Laptop, Building2, Globe, Sparkles, Send, Clock, DollarSign, Layers } from 'lucide-react';
+import { Calculator, Check, ArrowRight, Laptop, Building2, Globe, Send, Clock, DollarSign, Layers } from 'lucide-react';
 
 interface EngagementOption {
   id: string;
@@ -58,6 +58,14 @@ const ENGAGEMENT_TYPES: EngagementOption[] = [
     estDuration: '24 – 72 Hours',
     description: 'Cinematic commercial video cuts, YouTube long-form pacing, viral vertical reels/TikToks, sound design, and color grading.',
     suggestedDeliverables: ['4K Cinematic Color Grading', 'Dynamic Sound Design & Audio Sync', 'Motion Titles & Subtitles', 'Vertical Reels & Long-Form Edits', 'Multi-Platform Export Bundles']
+  },
+  {
+    id: 'ict-infra-cloud',
+    name: 'ICT Infrastructure & Cloud Security Setup',
+    category: 'Infrastructure & Security',
+    estDuration: '3 – 10 Days',
+    description: 'Enterprise ICT setup, network routing, firewall configuration, automated backup snapshot schedules, and cloud virtualization provisioning.',
+    suggestedDeliverables: ['MikroTik/Cisco Network Configuration', 'Automated Backup & Disaster Recovery Pipeline', 'Firewall & Cybersecurity Access Control', 'Huawei/Linux Server Setup', 'SLA Health & Uptime Monitoring']
   }
 ];
 
@@ -248,7 +256,6 @@ export const ProjectEstimatorSection: React.FC = () => {
                   <p className="text-[11px] font-outfit uppercase tracking-widest text-sky-400 font-semibold">Custom Scope Summary</p>
                   <h3 className="text-xl font-outfit font-bold text-white">{activeType.name}</h3>
                 </div>
-                <Sparkles className="w-5 h-5 text-sky-400" />
               </div>
 
               {/* Engagement Overview Details */}

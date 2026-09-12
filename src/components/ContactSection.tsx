@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { cvData } from '../data/cvData';
 import { Mail, Phone, MapPin, ExternalLink, Send, CheckCircle2, UserCheck, Building2, Copy, Check, Github, Linkedin, MessageSquare, Laptop, Globe, Briefcase, Clock } from 'lucide-react';
+import { emailHelper } from '../utils/emailHelper';
 
 export const ContactSection: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -12,19 +13,64 @@ export const ContactSection: React.FC = () => {
 
   const [submitted, setSubmitted] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedMsg, setCopiedMsg] = useState(false);
+
+  const getFullBody = () => {
+    return `Hello Daniel,\n\n${formState.message}\n\nFrom:\nName: ${formState.name}\nEmail: ${formState.email}`;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) return;
 
+    // Trigger default mail client or Gmail with formatted message
+    const payload = {
+      to: cvData.personalInfo.email,
+      subject: formState.subject || `Inquiry from ${formState.name}`,
+      body: getFullBody(),
+    };
+
+    // Open mail client
+    emailHelper.openDefaultMailClient(payload);
     setSubmitted(true);
-    setTimeout(() => {
-      setFormState({ name: '', email: '', subject: '', message: '' });
-    }, 3000);
   };
 
-  const copyEmail = () => {
-    navigator.clipboard.writeText(cvData.personalInfo.email);
+  const handleSendViaGmail = () => {
+    emailHelper.openGmail({
+      to: cvData.personalInfo.email,
+      subject: formState.subject || (formState.name ? `Inquiry from ${formState.name}` : 'Job Opportunity / Inquiry for Daniel Muiruri'),
+      body: formState.message ? getFullBody() : 'Hi Daniel,\n\nI would like to connect regarding an opportunity.',
+    });
+  };
+
+  const handleSendViaOutlook = () => {
+    emailHelper.openOutlook({
+      to: cvData.personalInfo.email,
+      subject: formState.subject || (formState.name ? `Inquiry from ${formState.name}` : 'Job Opportunity / Inquiry for Daniel Muiruri'),
+      body: formState.message ? getFullBody() : 'Hi Daniel,\n\nI would like to connect regarding an opportunity.',
+    });
+  };
+
+  const handleSendViaDefault = () => {
+    emailHelper.openDefaultMailClient({
+      to: cvData.personalInfo.email,
+      subject: formState.subject || (formState.name ? `Inquiry from ${formState.name}` : 'Job Opportunity / Inquiry for Daniel Muiruri'),
+      body: formState.message ? getFullBody() : 'Hi Daniel,\n\nI would like to connect regarding an opportunity.',
+    });
+  };
+
+  const handleCopyMessage = async () => {
+    await emailHelper.copyFullMessage({
+      to: cvData.personalInfo.email,
+      subject: formState.subject || 'Inquiry',
+      body: getFullBody(),
+    });
+    setCopiedMsg(true);
+    setTimeout(() => setCopiedMsg(false), 2500);
+  };
+
+  const copyEmail = async () => {
+    await emailHelper.copyEmail();
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -263,14 +309,49 @@ export const ContactSection: React.FC = () => {
               </div>
 
               {submitted ? (
-                <div className="p-8 rounded-sm bg-white/[0.02] border border-white/10 text-center space-y-3 animate-fadeIn">
-                  <div className="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/30">
+                <div className="p-8 rounded-sm bg-white/[0.02] border border-white/10 text-center space-y-4 animate-fadeIn">
+                  <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/30">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
-                  <h4 className="text-lg font-medium text-white">Message Dispatched</h4>
-                  <p className="text-xs font-mono text-white/60">
-                    Thank you for reaching out. Daniel has received your message note and will respond shortly.
-                  </p>
+                  <div>
+                    <h4 className="text-lg font-medium text-white">Email Prepared & Initiated</h4>
+                    <p className="text-xs font-mono text-white/60 mt-1 max-w-md mx-auto">
+                      Your inquiry has been compiled. If your desktop client didn't open automatically, choose your preferred email service below:
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+                    <button
+                      onClick={handleSendViaGmail}
+                      className="px-3.5 py-2 rounded-sm bg-white text-black font-semibold text-xs uppercase tracking-wider hover:bg-white/90 transition-all flex items-center gap-1.5 shadow-md"
+                    >
+                      <Mail className="w-3.5 h-3.5 text-red-500" />
+                      <span>Send in Gmail Web</span>
+                    </button>
+                    <button
+                      onClick={handleSendViaOutlook}
+                      className="px-3.5 py-2 rounded-sm bg-white/10 border border-white/20 text-white hover:bg-white/20 font-semibold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5"
+                    >
+                      <Mail className="w-3.5 h-3.5 text-sky-400" />
+                      <span>Send in Outlook Web</span>
+                    </button>
+                    <button
+                      onClick={handleCopyMessage}
+                      className="px-3.5 py-2 rounded-sm bg-white/10 border border-white/20 text-white hover:bg-white/20 font-semibold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5"
+                    >
+                      {copiedMsg ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                      <span>{copiedMsg ? 'Copied!' : 'Copy Note'}</span>
+                    </button>
+                  </div>
+
+                  <div className="pt-3 border-t border-white/5">
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="text-xs text-white/40 hover:text-white underline font-mono"
+                    >
+                      ← Edit or Send Another Message
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 font-mono">
@@ -278,6 +359,7 @@ export const ContactSection: React.FC = () => {
                     <div className="space-y-1.5">
                       <label className="text-[10px] uppercase tracking-widest text-white/40">Your Full Name *</label>
                       <input
+                        id="contact-name-input"
                         type="text"
                         required
                         value={formState.name}
@@ -290,6 +372,7 @@ export const ContactSection: React.FC = () => {
                     <div className="space-y-1.5">
                       <label className="text-[10px] uppercase tracking-widest text-white/40">Your Email Address *</label>
                       <input
+                        id="contact-email-input"
                         type="email"
                         required
                         value={formState.email}
@@ -303,6 +386,7 @@ export const ContactSection: React.FC = () => {
                   <div className="space-y-1.5">
                     <label className="text-[10px] uppercase tracking-widest text-white/40">Subject / Role Opportunity</label>
                     <input
+                      id="contact-subject-input"
                       type="text"
                       value={formState.subject}
                       onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
@@ -314,6 +398,7 @@ export const ContactSection: React.FC = () => {
                   <div className="space-y-1.5">
                     <label className="text-[10px] uppercase tracking-widest text-white/40">Message *</label>
                     <textarea
+                      id="contact-message-input"
                       required
                       rows={5}
                       value={formState.message}
@@ -323,23 +408,56 @@ export const ContactSection: React.FC = () => {
                     />
                   </div>
 
-                  <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
-                    <button
-                      type="submit"
-                      className="w-full sm:w-auto px-6 py-3 rounded-lg bg-white text-black font-semibold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg hover:bg-white/90"
-                    >
-                      <Send className="w-3.5 h-3.5" />
-                      Send Direct Message
-                    </button>
+                  {/* Primary & Direct Mail Triggers */}
+                  <div className="pt-2 space-y-3">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+                      <button
+                        type="submit"
+                        className="px-6 py-3 rounded-sm bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg"
+                      >
+                        <Send className="w-3.5 h-3.5" />
+                        <span>Send Message (Email)</span>
+                      </button>
 
-                    <a
-                      href={`mailto:${cvData.personalInfo.email}?subject=${encodeURIComponent(
-                        formState.subject || 'Inquiry for Daniel Muiruri'
-                      )}&body=${encodeURIComponent(formState.message)}`}
-                      className="text-xs text-white/40 hover:text-white underline font-sans"
-                    >
-                      Or open in your email client
-                    </a>
+                      <button
+                        type="button"
+                        onClick={handleSendViaGmail}
+                        className="px-4 py-3 rounded-sm bg-white text-black font-semibold text-xs uppercase tracking-wider hover:bg-white/90 transition-all flex items-center justify-center gap-1.5 shadow"
+                        title="Open with Gmail compose in a new tab"
+                      >
+                        <Mail className="w-3.5 h-3.5 text-red-600" />
+                        <span>Open via Gmail</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={handleSendViaOutlook}
+                        className="px-4 py-3 rounded-sm bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5"
+                        title="Open with Outlook compose in a new tab"
+                      >
+                        <Mail className="w-3.5 h-3.5 text-sky-400" />
+                        <span>Outlook Web</span>
+                      </button>
+                    </div>
+
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-[11px] text-white/50 pt-1">
+                      <button
+                        type="button"
+                        onClick={handleCopyMessage}
+                        className="text-white/40 hover:text-white underline flex items-center gap-1"
+                      >
+                        {copiedMsg ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                        <span>{copiedMsg ? 'Message Copied!' : 'Copy Form Content to Clipboard'}</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={handleSendViaDefault}
+                        className="text-white/40 hover:text-white underline"
+                      >
+                        Open in Default Mail Client
+                      </button>
+                    </div>
                   </div>
                 </form>
               )}

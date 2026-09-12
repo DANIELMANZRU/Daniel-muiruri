@@ -1,0 +1,31 @@
+# Robots.txt for Daniel Muiruri Portfolio & Interactive CV
+# Allows all search engine web crawlers to index and discover content
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Explicit search engine bot directives
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Sitemap Indexing
+Sitemap: https://dmuiruri2000.wixsite.com/daniel-muiruri/sitemap.xml

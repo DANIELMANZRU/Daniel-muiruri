@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
               {cvData.personalInfo.fullName}
             </h3>
             <p className="text-white/40 font-mono text-xs">
-              Software Developer & Systems Engineer • Nairobi, Kenya
+              Software Developer & Systems Engineer • {cvData.personalInfo.location}
             </p>
           </div>
 
@@ -96,12 +96,40 @@ export const Footer: React.FC = () => {
           </button>
         </div>
 
-        <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/30 text-[11px] font-mono">
+        {/* Internal Navigation & Crawler Discovery Links */}
+        <div className="pt-6 border-t border-white/5 flex flex-wrap items-center justify-between gap-4 text-xs text-white/50 font-mono">
+          <div className="flex flex-wrap items-center gap-4">
+            <a href="#experience" className="hover:text-white transition-colors">Experience</a>
+            <span>•</span>
+            <a href="#projects" className="hover:text-white transition-colors">Projects</a>
+            <span>•</span>
+            <a href="#skills" className="hover:text-white transition-colors">Skills</a>
+            <span>•</span>
+            <a href="#education" className="hover:text-white transition-colors">Education</a>
+            <span>•</span>
+            <a href="#photography" className="hover:text-white transition-colors">Media</a>
+            <span>•</span>
+            <a href="#estimator" className="hover:text-white transition-colors">Estimator</a>
+            <span>•</span>
+            <a href="#faq" className="hover:text-emerald-400 transition-colors">FAQs</a>
+            <span>•</span>
+            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+          </div>
+
+          <div className="flex items-center gap-3 text-[11px] text-white/40">
+            <a href="/robots.txt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">robots.txt</a>
+            <span>•</span>
+            <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">sitemap.xml</a>
+          </div>
+        </div>
+
+        <div className="pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/30 text-[11px] font-mono">
           <p>© {new Date().getFullYear()} Daniel Muiruri Itugi. All rights reserved.</p>
           <p className="flex items-center gap-1">
-            Built with React, TypeScript & Tailwind CSS.
+            Built with React, TypeScript & Tailwind CSS • Nairobi, Kenya.
           </p>
         </div>
+
 
       </div>
     </footer>

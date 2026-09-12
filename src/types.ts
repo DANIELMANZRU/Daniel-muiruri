@@ -1,7 +1,7 @@
 export interface Project {
   id: string;
   title: string;
-  category: 'web' | 'mobile' | 'systems' | 'branding' | 'automation';
+  category: 'web' | 'mobile' | 'systems' | 'branding' | 'automation' | 'research';
   summary: string;
   description: string;
   clientOrContext?: string;

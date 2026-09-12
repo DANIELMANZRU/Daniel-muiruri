@@ -59,13 +59,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-xs font-light tracking-tighter bg-gradient-to-br from-white/10 to-transparent text-white group-hover:border-white/40 transition-colors">
               DM
             </div>
-            <h1 className="text-white/90 font-medium tracking-tight text-sm sm:text-base group-hover:text-white transition-colors whitespace-nowrap">
+            <span className="text-white/90 font-medium tracking-tight text-sm sm:text-base group-hover:text-white transition-colors whitespace-nowrap">
               Daniel Muiruri
-            </h1>
+            </span>
           </div>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-2.5 lg:gap-5">
+          <nav className="hidden md:flex items-center gap-2 lg:gap-4 xl:gap-5">
             <button
               id="nav-link-experience"
               onClick={() => scrollToSection('experience')}
@@ -109,6 +109,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               Estimator
             </button>
             <button
+              id="nav-link-faq"
+              onClick={() => scrollToSection('faq')}
+              className="text-[11px] uppercase tracking-[0.12em] lg:tracking-[0.15em] text-emerald-400 hover:text-emerald-300 transition-colors font-medium whitespace-nowrap"
+            >
+              FAQs
+            </button>
+            <button
               id="nav-link-contact"
               onClick={() => scrollToSection('contact')}
               className="text-[11px] uppercase tracking-[0.12em] lg:tracking-[0.15em] text-white/60 hover:text-white transition-colors font-medium whitespace-nowrap"
@@ -116,6 +123,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               Contact
             </button>
           </nav>
+
 
           {/* Action Buttons */}
           <div className="hidden sm:flex items-center gap-2 shrink-0">
@@ -209,6 +217,12 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="text-left px-3 py-2 rounded-sm bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs uppercase tracking-wider font-medium hover:bg-sky-500/20"
             >
               Estimator
+            </button>
+            <button
+              onClick={() => scrollToSection('faq')}
+              className="text-left px-3 py-2 rounded-sm bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs uppercase tracking-wider font-medium hover:bg-emerald-500/20"
+            >
+              FAQs & Hiring
             </button>
             <button
               onClick={() => scrollToSection('contact')}
