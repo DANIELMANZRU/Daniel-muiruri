@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ReadingProgressBar } from './components/ReadingProgressBar';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
@@ -21,6 +21,10 @@ export default function App() {
   const [printCvOpen, setPrintCvOpen] = useState(false);
   const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    document.title = 'Daniel Muiruri | Full-Stack Developer, Data Engineer & Network Engineer';
+  }, []);
 
   const showToast = (msg: string) => {
     setToastMessage(msg);

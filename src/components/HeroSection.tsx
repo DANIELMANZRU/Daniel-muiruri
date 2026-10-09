@@ -12,9 +12,9 @@ interface HeroSectionProps {
 }
 
 const ROLES = [
-  'Data Engineer & Pipeline Architect',
   'Full-Stack Software Developer',
-  'ICT Infrastructure & Systems Specialist',
+  'Data Engineer & Pipeline Architect',
+  'Network Engineer & ICT Specialist',
   'Huawei HCIA Cloud Solutions Engineer',
   'Data Warehouse & SQL Optimization Specialist',
   'Cybersecurity & Disaster Recovery Specialist',

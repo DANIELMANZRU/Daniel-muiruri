@@ -4,7 +4,7 @@ export const cvData: DanielCVData = {
   personalInfo: {
     fullName: "Daniel Muiruri Itugi",
     alias: "Daniel Muiruri",
-    headline: "Data Engineer, Full-Stack Software Developer, ICT Infrastructure & Cloud Engineer (Huawei HCIA), Cybersecurity & Space Digital Infrastructure Researcher",
+    headline: "Full-Stack Developer, Data Engineer & Network Engineer | Huawei HCIA Cloud Solutions & Enterprise Systems",
     location: "Nairobi, Kenya (P.O Box 187-10400)",
     phone: "+254799655572",
     email: "DMUIRURI2000@GMAIL.COM",
