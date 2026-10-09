@@ -34,6 +34,7 @@ export interface ExperienceItem {
   type: 'Work Experience' | 'Internship' | 'Attachment';
   responsibilities: string[];
   keyAchievements?: string[];
+  technologies?: string[];
 }
 
 export interface EducationItem {

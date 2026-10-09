@@ -367,6 +367,11 @@ ${references.map(ref => `• ${ref.name} — ${ref.title}, ${ref.organization}\n
                         <li key={idx}>{r}</li>
                       ))}
                     </ul>
+                    {exp.technologies && exp.technologies.length > 0 && (
+                      <div className={`text-[10px] font-mono pt-0.5 ${previewTheme === 'light' ? 'text-teal-700' : 'text-emerald-400'}`}>
+                        Key Stack: {exp.technologies.join(' • ')}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

@@ -463,6 +463,11 @@ export const generateCvHtml = (): string => {
               <ul class="bullet-list">
                 ${exp.responsibilities.slice(0, 3).map(r => `<li>${r}</li>`).join('')}
               </ul>
+              ${exp.technologies && exp.technologies.length > 0 ? `
+                <div style="font-size: 8pt; color: #047857; margin-top: 3px; font-family: monospace;">
+                  Technologies: ${exp.technologies.join(' • ')}
+                </div>
+              ` : ''}
             </div>
           `).join('')}
         </div>

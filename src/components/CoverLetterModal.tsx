@@ -229,7 +229,7 @@ Daniel Muiruri Itugi`;
             <div className="p-3.5 rounded-sm bg-white/5 border border-white/10 text-xs text-white/90 space-y-1">
               <span className="font-mono text-[10px] uppercase tracking-wider block text-emerald-400">Role-Tailored Highlight:</span>
               {roleFocus === 'data' && (
-                <p>Experienced Data Engineer with proven competence in designing automated ETL/ELT pipelines, architecting star/snowflake schema data warehouses, tuning complex SQL queries, and processing streaming/batch telemetry using Python, PostgreSQL, DuckDB, and Parquet to deliver sub-minute analytics and automated data governance.</p>
+                <p>Experienced Data Engineer with proven competence in designing automated ETL/ELT pipelines, architecting star/snowflake schema data warehouses, and processing high-throughput telemetry across Appville ISP networks and NAWASCO municipal utility systems using Python, SQL, PostgreSQL, DuckDB, and Parquet to deliver sub-minute analytics and automated data governance.</p>
               )}
               {roleFocus === 'infrastructure' && (
                 <p>Equipped with 15+ months of combined enterprise ICT experience across Appville ISP and NAWASCO municipal systems — administering Linux/Windows servers, configuring MikroTik/Cisco routers, managing structured cabling, and guaranteeing 99.9% network uptime SLAs.</p>

@@ -27,7 +27,7 @@ export const ExperienceSection: React.FC = () => {
             Work Experience & Internships
           </h2>
           <p className="text-white/60 text-sm sm:text-base font-light">
-            Hands-on technical roles spanning software development, ISP network engineering, IT department operations, and customer experience campaigns.
+            Hands-on engineering roles spanning data pipelines, analytics architecture, ISP network operations, municipal utility systems, and full-stack software development.
           </p>
         </div>
 
@@ -46,8 +46,8 @@ export const ExperienceSection: React.FC = () => {
                 <SpotlightCard className="p-6 shadow-xl space-y-4 hover:border-white/25">
                   
                   {/* Card Top Row */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <div>
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+                    <div className="space-y-1.5">
                       <div className="flex items-center gap-2">
                         <span className="text-[10px] uppercase tracking-widest font-mono px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/70">
                           {exp.type}
@@ -57,14 +57,27 @@ export const ExperienceSection: React.FC = () => {
                           {exp.location}
                         </span>
                       </div>
-                      <h3 className="text-lg font-medium text-white/90 pt-2">{exp.title}</h3>
-                      <div className="text-xs text-white/60 flex items-center gap-1.5 mt-0.5">
+                      <h3 className="text-lg font-medium text-white/90 pt-1">{exp.title}</h3>
+                      <div className="text-xs text-white/60 flex items-center gap-1.5">
                         <Building2 className="w-3.5 h-3.5 text-white/40" />
                         {exp.company}
                       </div>
+
+                      {exp.technologies && exp.technologies.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 pt-2">
+                          {exp.technologies.map((tech, tIdx) => (
+                            <span
+                              key={tIdx}
+                              className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/[0.04] border border-white/10 text-emerald-300/90"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
 
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 shrink-0">
                       <span className="inline-flex items-center gap-1.5 text-xs font-mono text-white/50 px-2.5 py-1 rounded-md bg-white/[0.02] border border-white/5">
                         <Calendar className="w-3.5 h-3.5 text-white/40" />
                         {exp.period}
@@ -73,6 +86,7 @@ export const ExperienceSection: React.FC = () => {
                       <button
                         onClick={() => toggleExpand(exp.id)}
                         className="p-1.5 rounded-md bg-white/5 border border-white/10 text-white/60 hover:text-white transition-colors"
+                        aria-label={isExpanded ? "Collapse role details" : "Expand role details"}
                       >
                         {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                       </button>

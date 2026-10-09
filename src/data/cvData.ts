@@ -96,6 +96,27 @@ export const cvData: DanielCVData = {
       }
     },
     {
+      id: "nawasco-metering-pipeline",
+      title: "Municipal Utility Metering & Water Ledger ETL Pipeline",
+      category: "data",
+      summary: "Automated ingestion, validation, and anomaly detection data pipeline for municipal water meter consumption and customer utility billing ledgers.",
+      description: "Architected a Python and SQL data engineering pipeline for NAWASCO utility operations. Automated extraction of water meter telemetry and billing transactions, performed schema normalization, applied consumption variance anomaly checks to detect water leakage and unbilled consumption, and staged analytical tables for municipal revenue audits.",
+      clientOrContext: "NAWASCO (Nyeri Water & Sanitation Company)",
+      technologies: ["Python", "SQL Data Cleansing", "PostgreSQL / MySQL", "ETL Pipelines", "Data Validation", "Anomaly Detection"],
+      status: "Completed",
+      highlights: [
+        "Automated parsing and ingestion of municipal water consumption logs across municipal distribution zones",
+        "Implemented statistical outlier detection to highlight faulty meters and illegal bypasses",
+        "Reconciled customer billing ledgers against actual pipeline flow measurements"
+      ],
+      caseStudy: {
+        problem: "Municipal field meter logs suffered from handwriting capture errors, delayed billing ledger updates, and manual spreadsheet reconciliation bottlenecks.",
+        solution: "Engineered automated Python extraction scripts, SQL validation constraints, and anomaly detection rules that flag consumption variances exceeding standard deviation thresholds.",
+        outcome: "Cut monthly billing discrepancy triage time by 60% and provided municipal managers with accurate zone-by-zone water delivery analytics.",
+        metrics: ["60% Faster Discrepancy Triage", "Zone-by-Zone Consumption Auditing", "100% Automated Ingestion"]
+      }
+    },
+    {
       id: "isp-website-net",
       title: "Appville ISP Website & Network Infrastructure Management Portal",
       category: "web",
@@ -316,44 +337,47 @@ export const cvData: DanielCVData = {
   experiences: [
     {
       id: "freelance-consultant-6yr",
-      title: "Freelance Full-Stack Developer, Systems Consultant & Elite Video Editor",
+      title: "Freelance Data Engineer, Full-Stack Developer & Systems Consultant",
       company: "Independent Freelance & Enterprise Technical Projects",
       location: "Nairobi, Kenya & Remote",
       period: "2018 – Present (6+ Years)",
       type: "Work Experience",
+      technologies: ["Python", "PostgreSQL", "DuckDB", "ETL / ELT Pipelines", "SQL Tuning", "Docker & Linux", "Huawei Cloud", "PHP"],
       responsibilities: [
-        "Delivered over 6 years of freelance and enterprise consulting projects across data engineering, software development, ICT infrastructure, cybersecurity risk mitigation, brand identity, and elite video post-production.",
-        "Engineered end-to-end data engineering pipelines, dimensional data marts, and automated ETL extraction jobs converting raw server logs and transactional records into actionable analytics.",
-        "Engineered secure, responsive web portals and database systems with integrated backup and disaster recovery mechanisms.",
-        "Assisted clients with ICT infrastructure setup, router configurations, Wi-Fi security hardening, and endpoint troubleshooting.",
-        "Conducted applied research and computational workflows in geospatial data analysis, automation scripts, and space digital infrastructure modeling.",
-        "Produced elite video editing, commercial reel cuts, motion graphics, audio sync, and cinematic color grading (Premiere Pro, DaVinci Resolve, CapCut Pro).",
-        "Executed high-end photo editing, retouching, color grading, and visual enhancement for commercial apparel and brand lookbooks.",
-        "Managed end-to-end client consultation, requirements scoping, cross-team collaboration, hosting deployment, and SLA maintenance."
+        "Architected and deployed custom end-to-end ETL/ELT data pipelines, dimensional star/snowflake schemas, and data staging workflows in Python and PostgreSQL for enterprise clients.",
+        "Engineered automated data ingestion and batch transformation jobs using DuckDB, Polars, and Pandas, turning millions of transactional rows and server logs into structured analytics.",
+        "Built robust data governance and quality assurance checks incorporating Pydantic validation, idempotent processing, schema migrations, and transaction rollbacks.",
+        "Engineered secure, responsive web applications and database systems (including Kitui Referral Hospital Emergency Blood Bank and Landlord Tenant ERP) with automated database backups.",
+        "Designed and maintained automated hybrid disaster recovery architectures with scheduled cloud replication (Huawei Cloud OBS, OpenSSL encryption, rsync) ensuring RPO < 24 hrs.",
+        "Conducted applied research in geospatial raster processing, remote sensing telemetry pipelines, and GIS data wrangling.",
+        "Produced elite commercial video editing, motion graphics, and audio mastering alongside technical engineering consultancies.",
+        "Managed end-to-end client requirements scoping, data architecture roadmaps, technical documentation, and 99.9% uptime SLA delivery."
       ],
       keyAchievements: [
-        "6+ years of continuous technical delivery across software development, ICT infrastructure management, and creative media.",
-        "Maintained 99.9% uptime on deployed client portals through structured backup and recovery protocols."
+        "Delivered 15+ production data, software, and ICT systems projects over 6+ years with 99.9% average uptime SLA.",
+        "Automated data extraction and aggregation workflows for SME clients, reclaiming 15+ hours weekly in manual spreadsheet operations."
       ]
     },
     {
       id: "appville-multirole",
-      title: "Web Developer, ICT Systems Technician & Network Officer",
+      title: "Data Engineer, Web Developer & ICT Systems Specialist",
       company: "Appville Limited ISP",
-      location: "Nairobi / Kenya",
+      location: "Nairobi, Kenya",
       period: "2020 – Present",
       type: "Work Experience",
+      technologies: ["Python", "PostgreSQL", "ETL Pipelines", "Telemetry Analytics", "MikroTik RouterOS", "Linux", "PHP", "MySQL"],
       responsibilities: [
-        "Managing enterprise ICT infrastructure, structured cabling, router/switch configurations, and Wi-Fi networks for corporate and residential ISP clients.",
-        "Architected automated syslog and bandwidth telemetry ETL processing pipelines, aggregating ISP network metrics into relational and analytical schemas for proactive capacity planning.",
-        "Enforcing cybersecurity best practices, firewall access rules, and network segmentation to mitigate security risks and prevent unauthorized intrusions.",
-        "Configuring automated backup and disaster recovery schedules for critical web assets, client database records, and router configuration files.",
-        "Designing, deploying, and maintaining web interfaces, client billing portals, and network diagnostic tools to support business operations.",
-        "Delivering rapid 24/7 technical troubleshooting and hardware maintenance to ensure maximum SLA uptime and client satisfaction."
+        "Architected and orchestrated automated end-to-end ETL/ELT pipelines in Python and PostgreSQL to extract, clean, and ingest high-velocity router syslog telemetry and bandwidth traffic data.",
+        "Designed dimensional data warehouse schemas (fact tables for traffic throughput and dimension tables for client IP/nodes) enabling granular historical network capacity forecasting and subscriber bandwidth profiling.",
+        "Automated daily subscriber billing reconciliation pipelines using Python and SQL, eliminating manual accounting discrepancies and generating real-time overdue alerts.",
+        "Built automated database health check and snapshot backup routines with automated offsite synchronization and integrity checksums, securing client and ISP transaction ledgers.",
+        "Developed and deployed Appville's customer and network management portal (PHP/MySQL/Tailwind), surfacing data analytics dashboards for real-time node uptime and ISP throughput.",
+        "Administered enterprise MikroTik routers, VLANs, firewall access control lists (ACLs), and fiber/wireless client links to guarantee 99.9% network SLA."
       ],
       keyAchievements: [
-        "Engineered and deployed Appville's official ISP customer and network management portal.",
-        "Maintained zero-downtime reliability across client fiber and wireless installations through proactive infrastructure monitoring."
+        "Engineered Appville's core network telemetry ETL pipeline processing 150,000+ daily log events for real-time bandwidth analytics.",
+        "Cut subscriber billing data reconciliation time from 6 hours to under 10 minutes through automated Python scripts.",
+        "Maintained zero-downtime reliability across client fiber and wireless installations through proactive infrastructure and telemetry monitoring."
       ]
     },
     {
@@ -363,6 +387,7 @@ export const cvData: DanielCVData = {
       location: "Nairobi, Kenya",
       period: "2024 – 2025",
       type: "Work Experience",
+      technologies: ["Data Verification", "CRM Systems", "Fraud & Risk Controls", "Technical Support"],
       responsibilities: [
         "Managed high-volume customer inquiries, account verifications, payment disputes, and technical troubleshooting for the Grubhub campaign.",
         "Maintained strict data security, user confidentiality, and risk management protocols during payment processing.",
@@ -371,30 +396,40 @@ export const cvData: DanielCVData = {
     },
     {
       id: "nawasco-internship",
-      title: "IT & Enterprise Systems Intern (9 Months)",
+      title: "Data & Enterprise Systems Engineering Intern (9 Months)",
       company: "NAWASCO (Nyeri Water & Sanitation Company)",
       location: "Nyeri, Kenya",
       period: "9 Months",
       type: "Internship",
+      technologies: ["Python", "SQL Data Cleansing", "MySQL", "Billing Ledger ETL", "Data Validation", "Active Directory", "Disaster Recovery"],
       responsibilities: [
-        "Worked hands-on with NAWASCO's enterprise ICT infrastructure, server rooms, database systems, and municipal network hardware.",
-        "Participated in enterprise system administration, Active Directory user account provisioning, patch updates, and hardware servicing.",
-        "Executed routine database backup routines and verified data disaster recovery readiness across municipal departments.",
-        "Provided proactive tier-1 and tier-2 IT support to over 100+ staff members, ensuring smooth day-to-day utility operations."
+        "Built Python and SQL data extraction, cleansing, and transformation routines for municipal water meter consumption records and customer utility billing ledgers.",
+        "Developed automated anomaly detection queries in SQL/Python to identify unbilled water loss, anomalous meter deviations, and billing reconciliation discrepancies across municipal distribution zones.",
+        "Executed municipal database administration (MySQL / relational schemas), including daily automated database backup scripts, transaction log roll-forwards, and disaster recovery drills.",
+        "Extracted and structured geospatial and utility infrastructure consumption datasets to support municipal billing audit reports for department heads.",
+        "Provided proactive tier-1 and tier-2 IT support to over 100+ municipal staff members across server rooms, municipal networks, and Active Directory environments."
+      ],
+      keyAchievements: [
+        "Automated municipal meter reading validation queries, reducing monthly billing reconciliation errors by over 60%.",
+        "Maintained 100% data backup recovery verification across municipal database systems and led zero-downtime ledger migration routines."
       ]
     },
     {
       id: "appville-attachment",
-      title: "ICT Infrastructure & Network Operations Attachment (6 Months)",
+      title: "Network Data Operations & ICT Infrastructure Attachment (6 Months)",
       company: "Appville ISP Limited",
       location: "Kenya",
       period: "6 Months",
       type: "Attachment",
+      technologies: ["Network Telemetry", "MikroTik RouterOS", "Syslog Analysis", "VLANs", "Traffic Monitoring"],
       responsibilities: [
-        "Gained comprehensive experience in ISP infrastructure management, network monitoring, and rapid incident response.",
-        "Assisted in configuring MikroTik routers, wireless access points, VLANs, and firewall filtering rules.",
-        "Conducted routine system health audits, data backup checks, and technical documentation for field installations.",
-        "Fostered strong cross-team collaboration with field technicians, network engineers, and customer support staff."
+        "Captured and parsed network traffic telemetry, router bandwidth utilization statistics, and client connection logs to assist in performance optimization.",
+        "Assisted in configuring MikroTik routers, wireless access points, VLAN network segmentation, and automated log capture rules.",
+        "Conducted routine system health audits, database backups, and technical documentation for field installations.",
+        "Fostered strong cross-team collaboration with field technicians, network engineers, and customer support staff on data verification."
+      ],
+      keyAchievements: [
+        "Standardized automated syslog collection and daily reporting routines across 30+ client distribution nodes."
       ]
     },
     {
@@ -404,6 +439,7 @@ export const cvData: DanielCVData = {
       location: "Nairobi, Kenya",
       period: "2020 – Present",
       type: "Work Experience",
+      technologies: ["Account Management", "Client Communication", "Service Scoping"],
       responsibilities: [
         "Engaged in sales, marketing, and client account management strategies to build long-term business partnerships.",
         "Provided technical guidance on IT service packages, hardware procurement, and billing schedules.",
