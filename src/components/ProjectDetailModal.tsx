@@ -1,18 +1,7 @@
 import React from 'react';
-import { X, ExternalLink, Code2, CheckCircle2, ShieldCheck, Layers } from 'lucide-react';
+import { X, ExternalLink, Code2, CheckCircle2, ShieldCheck, Layers, Target, Check, TrendingUp } from 'lucide-react';
 import { soundEffects } from '../utils/soundEffects';
-
-interface Project {
-  id: string;
-  title: string;
-  category: string;
-  summary: string;
-  description: string;
-  clientOrContext?: string;
-  technologies: string[];
-  status: string;
-  highlights: string[];
-}
+import { Project } from '../types';
 
 interface ProjectDetailModalProps {
   project: Project | null;
@@ -41,7 +30,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           <div className="space-y-1 pr-4">
             <div className="flex items-center gap-2">
               <span className="px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider bg-white/10 border border-white/10 text-white/70 rounded-md">
-                {project.category}
+                {project.category === 'data' ? 'Data Engineering' : project.category}
               </span>
               <span className="px-2 py-0.5 text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-md">
                 {project.status}
@@ -75,6 +64,60 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             </h4>
             <p className="text-white/90 font-sans">{project.description}</p>
           </div>
+
+          {/* Case Study: Problem -> Solution -> Measurable Outcome */}
+          {project.caseStudy && (
+            <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 space-y-4">
+              <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-emerald-400 uppercase tracking-wider">
+                  <Target className="w-4 h-4 text-emerald-400" />
+                  <span>Engineering Case Study</span>
+                </div>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                  Verified Production Outcome
+                </span>
+              </div>
+
+              <div className="space-y-3 text-xs">
+                <div>
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-rose-400 font-semibold block mb-1">
+                    [Problem / Operational Challenge]
+                  </span>
+                  <p className="text-white/80 leading-relaxed font-sans pl-2 border-l border-rose-500/30">
+                    {project.caseStudy.problem}
+                  </p>
+                </div>
+
+                <div>
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-sky-400 font-semibold block mb-1">
+                    [Engineering Solution & Architecture]
+                  </span>
+                  <p className="text-white/80 leading-relaxed font-sans pl-2 border-l border-sky-500/30">
+                    {project.caseStudy.solution}
+                  </p>
+                </div>
+
+                <div>
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-emerald-400 font-semibold block mb-1">
+                    [Measurable Impact & Results]
+                  </span>
+                  <p className="text-white/80 leading-relaxed font-sans pl-2 border-l border-emerald-500/30 mb-2">
+                    {project.caseStudy.outcome}
+                  </p>
+                  {project.caseStudy.metrics && (
+                    <div className="flex flex-wrap gap-2 pt-1 pl-2">
+                      {project.caseStudy.metrics.map((m, mi) => (
+                        <span key={mi} className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-mono text-[11px] font-semibold">
+                          <TrendingUp className="w-3 h-3 text-emerald-400" />
+                          {m}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Tech Stack */}
           <div className="space-y-2">

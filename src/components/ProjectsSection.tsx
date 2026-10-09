@@ -16,6 +16,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onShowToast })
 
   const categories = [
     { id: 'all', label: 'All Projects' },
+    { id: 'data', label: 'Data Engineering' },
     { id: 'research', label: 'Space & Remote Sensing' },
     { id: 'web', label: 'Web & Portals' },
     { id: 'mobile', label: 'Mobile Apps' },
@@ -54,7 +55,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onShowToast })
             Featured Projects & Systems
           </h2>
           <p className="text-white/60 text-sm sm:text-base font-light">
-            From healthcare blood bank management and commercial ISP portals to task automation scripts and brand graphic design.
+            From enterprise ETL data warehouses and real-time telemetry pipelines to hospital blood bank systems, ISP network portals, and task automation scripts.
           </p>
         </div>
 
@@ -87,7 +88,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onShowToast })
                 {/* Header line: Category & Status */}
                 <div className="flex items-center justify-between gap-2 font-mono">
                   <span className="text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/70">
-                    {project.category}
+                    {project.category === 'data' ? 'data engineering' : project.category}
                   </span>
 
                   <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-md bg-white/[0.02] text-white/50 border border-white/5">
@@ -117,6 +118,21 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onShowToast })
                 <p className="text-white/60 text-xs font-light leading-relaxed line-clamp-3">
                   {project.summary}
                 </p>
+
+                {/* Case Study Impact Metric Highlight if present */}
+                {project.caseStudy && project.caseStudy.metrics && (
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {project.caseStudy.metrics.slice(0, 2).map((metric, mi) => (
+                      <span
+                        key={mi}
+                        className="inline-flex items-center gap-1 text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/25 text-emerald-300"
+                      >
+                        <CheckCircle2 className="w-2.5 h-2.5 text-emerald-400" />
+                        {metric}
+                      </span>
+                    ))}
+                  </div>
+                )}
 
                 {/* Key Highlights */}
                 <ul className="space-y-1.5 text-xs text-white/50 font-light">

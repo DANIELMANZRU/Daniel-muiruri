@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ReadingProgressBar } from './components/ReadingProgressBar';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { ProjectsSection } from './components/ProjectsSection';
@@ -28,6 +29,9 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-white selection:text-black">
       
+      {/* Scroll-Linked Reading Progress Bar */}
+      <ReadingProgressBar />
+
       {/* Top Fixed Header Navbar */}
       <Navbar
         onOpenCoverLetter={() => setCoverLetterOpen(true)}
@@ -60,13 +64,13 @@ export default function App() {
         {/* Section 6: Photo Retouching & Photography Showcase */}
         <PhotoShowcaseSection />
 
-        {/* Section 8: Interactive Scope Estimator (Feature 2) */}
+        {/* Section 7: Interactive Scope Estimator */}
         <ProjectEstimatorSection />
 
-        {/* Section 9: SEO FAQs & Search Visibility */}
+        {/* Section 8: SEO FAQs & Search Visibility */}
         <SEOFAQSection />
 
-        {/* Section 10: Contact Form & Availability */}
+        {/* Section 9: Contact Form & Availability */}
         <ContactSection />
 
       </main>

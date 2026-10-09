@@ -6,7 +6,7 @@ interface FAQItem {
   id: string;
   question: string;
   answer: string;
-  category: 'Services' | 'Infrastructure' | 'Hiring' | 'Research';
+  category: 'Services' | 'Infrastructure' | 'Hiring' | 'Cloud';
   tags: string[];
 }
 
@@ -16,8 +16,15 @@ const FAQ_DATA: FAQItem[] = [
     id: 'faq-1',
     category: 'Services',
     question: 'What engineering services and solutions does Daniel Muiruri specialize in?',
-    answer: 'Daniel provides full-stack web and mobile application engineering (React, TypeScript, Node.js, Python), enterprise ICT infrastructure administration, network routing (MikroTik, Cisco), cloud infrastructure architecture (Huawei HCIA Certified in Cloud Computing & Services), backup & disaster recovery pipelines, and UI/UX product design.',
-    tags: ['Full-Stack', 'React', 'TypeScript', 'Node.js', 'Python']
+    answer: 'Daniel provides end-to-end data engineering (automated ETL/ELT pipelines, dimensional star-schema warehousing, SQL optimization, and stream ingestion), full-stack web and mobile engineering (React, TypeScript, PHP, Python), enterprise ICT infrastructure administration, network routing (MikroTik, Cisco), cloud infrastructure architecture (Huawei HCIA Certified in Cloud Computing & Services), and automated backup & disaster recovery pipelines.',
+    tags: ['Data Engineering', 'ETL Pipelines', 'Full-Stack', 'React', 'Python', 'Huawei HCIA']
+  },
+  {
+    id: 'faq-data-eng',
+    category: 'Services',
+    question: 'What data engineering and analytical pipeline capabilities does Daniel offer?',
+    answer: 'Daniel architects robust, automated data engineering pipelines that extract, transform, and load high-throughput logs, telemetry, and transactional business records. Using Python, SQL, PostgreSQL, DuckDB, and Parquet columnar formats, he designs dimensional star/snowflake data warehouses, enforces automated schema validation and data quality checks, and optimizes query response times by over 80%.',
+    tags: ['Data Engineering', 'ETL / ELT', 'Data Warehousing', 'SQL Tuning', 'DuckDB', 'PostgreSQL']
   },
   {
     id: 'faq-2',
@@ -42,10 +49,10 @@ const FAQ_DATA: FAQItem[] = [
   },
   {
     id: 'faq-5',
-    category: 'Research',
-    question: 'What is Daniel’s research focus in space digital infrastructure and remote sensing?',
-    answer: 'Daniel conducts applied research in geospatial computing, satellite raster pipeline processing, low-latency telemetry processing, and resilient data architectures for space and Earth observation systems. His projects examine fault-tolerant communication and orbital data processing.',
-    tags: ['Space Digital Infrastructure', 'Remote Sensing', 'GIS', 'Geospatial']
+    category: 'Cloud',
+    question: 'What is Daniel’s expertise in Huawei Cloud (HCIA) and hybrid infrastructure?',
+    answer: 'Daniel is a Huawei Certified ICT Associate (HCIA) in Cloud Computing and Cloud Services. He designs resilient virtual computing topologies using Elastic Cloud Servers (ECS), isolated Virtual Private Cloud (VPC) subnets, automated snapshot backups, and cost-effective Object Storage Service (OBS) lifecycle tiering to connect on-premises physical networking with scalable cloud infrastructure.',
+    tags: ['Huawei Cloud', 'HCIA Certified', 'Cloud Architecture', 'ECS / VPC', 'Hybrid Cloud']
   },
   {
     id: 'faq-6',
@@ -91,7 +98,7 @@ export const SEOFAQSection: React.FC = () => {
         {/* Filter Categories */}
 
         <div className="flex flex-wrap items-center gap-2 mb-8">
-          {['All', 'Services', 'Infrastructure', 'Hiring', 'Research'].map((cat) => (
+          {['All', 'Services', 'Infrastructure', 'Cloud', 'Hiring'].map((cat) => (
             <button
               key={cat}
               onClick={() => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { cvData } from '../data/cvData';
-import { Code2, Cloud, Palette, Wrench, Search, CheckCircle2, Award, BookOpen } from 'lucide-react';
+import { Code2, Cloud, Palette, Wrench, Search, CheckCircle2, Award, BookOpen, Database } from 'lucide-react';
 import { SpotlightCard } from './SpotlightCard';
 
 export const SkillsSection: React.FC = () => {
@@ -8,6 +8,8 @@ export const SkillsSection: React.FC = () => {
 
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
+      case 'Database':
+        return <Database className="w-4 h-4 text-emerald-400" />;
       case 'Code2':
         return <Code2 className="w-4 h-4 text-white/70" />;
       case 'Cloud':
@@ -43,7 +45,7 @@ export const SkillsSection: React.FC = () => {
             Technical Domain Matrix
           </h2>
           <p className="text-white/60 text-sm sm:text-base font-light">
-            Verified expertise in full-stack programming, cloud architecture, network infrastructure, graphic design, and financial administration.
+            Verified expertise in data engineering (automated ETL, dimensional warehousing, SQL), cloud architecture, full-stack programming, network infrastructure, and cybersecurity.
           </p>
         </div>
 
@@ -53,7 +55,7 @@ export const SkillsSection: React.FC = () => {
             <Search className="w-4 h-4 text-white/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Search skills (e.g. PHP, MySQL, Cloud, Photoshop)..."
+              placeholder="Search skills (e.g. ETL, SQL, PostgreSQL, Cloud, Python)..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-10 pr-4 py-2.5 rounded-sm bg-white/5 border border-white/10 text-white placeholder-white/40 text-xs focus:outline-none focus:border-white/30 transition-colors"

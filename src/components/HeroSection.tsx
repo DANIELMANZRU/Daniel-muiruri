@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, Award, Server, Code2, FileText, ArrowRight, Download, CheckCircle2, Globe, Terminal, Copy, Github, Linkedin, MessageSquare, ExternalLink } from 'lucide-react';
+import { Mail, Phone, FileText, Download, Copy, Github, Linkedin, MessageSquare } from 'lucide-react';
 import { cvData } from '../data/cvData';
-import { SpotlightCard } from './SpotlightCard';
+import { HeroInteractiveCard } from './HeroInteractiveCard';
 import { soundEffects } from '../utils/soundEffects';
 
 interface HeroSectionProps {
@@ -12,165 +12,18 @@ interface HeroSectionProps {
 }
 
 const ROLES = [
+  'Data Engineer & Pipeline Architect',
   'Full-Stack Software Developer',
   'ICT Infrastructure & Systems Specialist',
   'Huawei HCIA Cloud Solutions Engineer',
+  'Data Warehouse & SQL Optimization Specialist',
   'Cybersecurity & Disaster Recovery Specialist',
-  'Space Digital Infrastructure & Geospatial Researcher',
   'Elite Video Editor & Motion Designer',
   'Product Designer & UI/UX Specialist',
   'Accounting & Financial Systems Specialist (CPA 1 & 2)',
   'Workflow Automation & Python Engineer',
   'Network Operations & ISP Engineer'
 ];
-
-interface Interactive3DTerminalProps {
-  activeTab: 'overview' | 'certs' | 'stack';
-  setActiveTab: (tab: 'overview' | 'certs' | 'stack') => void;
-}
-
-const Interactive3DTerminal: React.FC<Interactive3DTerminalProps> = ({ activeTab, setActiveTab }) => {
-  const [transformStyle, setTransformStyle] = useState('rotateY(-6deg) rotateX(4deg)');
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = ((y - centerY) / centerY) * -14;
-    const rotateY = ((x - centerX) / centerX) * 14;
-
-    setTransformStyle(`rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale(1.02)`);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    setTransformStyle('rotateY(-6deg) rotateX(4deg) scale(1)');
-  };
-
-  return (
-    <div 
-      className="w-full max-w-md transition-all duration-300 ease-out"
-      style={{ perspective: '1200px' }}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div 
-        className={`w-full bg-[#050505] rounded-xl border border-white/20 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9),0_0_25px_rgba(16,185,129,0.15)] overflow-hidden font-mono text-xs transition-transform duration-200 ease-out ${
-          !isHovered ? 'animate-float3d' : ''
-        }`}
-        style={{
-          transform: transformStyle,
-          transformStyle: 'preserve-3d',
-        }}
-      >
-        {/* Terminal Header Bar */}
-        <div className="bg-white/10 px-4 py-3 border-b border-white/10 flex items-center justify-between select-none">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-red-500/80 shadow-inner"></div>
-            <div className="w-3 h-3 rounded-full bg-yellow-500/80 shadow-inner"></div>
-            <div className="w-3 h-3 rounded-full bg-emerald-500/80 shadow-inner"></div>
-            <span className="text-[11px] text-white/70 font-semibold ml-2 flex items-center gap-2">
-              <Terminal className="w-3.5 h-3.5 text-emerald-400" />
-              daniel@appville-sys:~
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">
-              3D SYS
-            </span>
-          </div>
-        </div>
-
-        {/* Terminal Tabs */}
-        <div className="flex border-b border-white/10 bg-white/[0.03] text-[11px]">
-          <button
-            onClick={() => setActiveTab('overview')}
-            className={`flex-1 py-2 px-3 border-r border-white/10 text-center transition-colors ${
-              activeTab === 'overview' ? 'bg-white/10 text-emerald-400 font-bold border-b-2 border-b-emerald-400' : 'text-white/50 hover:text-white'
-            }`}
-          >
-            overview.json
-          </button>
-          <button
-            onClick={() => setActiveTab('certs')}
-            className={`flex-1 py-2 px-3 border-r border-white/10 text-center transition-colors ${
-              activeTab === 'certs' ? 'bg-white/10 text-emerald-400 font-bold border-b-2 border-b-emerald-400' : 'text-white/50 hover:text-white'
-            }`}
-          >
-            certs.json
-          </button>
-          <button
-            onClick={() => setActiveTab('stack')}
-            className={`flex-1 py-2 px-3 text-center transition-colors ${
-              activeTab === 'stack' ? 'bg-white/10 text-emerald-400 font-bold border-b-2 border-b-emerald-400' : 'text-white/50 hover:text-white'
-            }`}
-          >
-            stack.json
-          </button>
-        </div>
-
-        {/* Terminal Body */}
-        <div className="p-4 sm:p-5 text-[11px] leading-relaxed text-white/90 space-y-3 min-h-[220px]">
-          <div className="text-white/30 text-[10px] flex items-center justify-between pb-1 border-b border-white/5">
-            <span>// EXECUTION_LOG: active_session</span>
-            <span>PING 12ms</span>
-          </div>
-
-          {activeTab === 'overview' && (
-            <div className="space-y-1.5 font-mono">
-              <p><span className="text-emerald-400">"candidate"</span>: <span className="text-amber-300">"Daniel Muiruri Itugi"</span>,</p>
-              <p><span className="text-emerald-400">"headline"</span>: <span className="text-amber-300">"ICT Infrastructure, Cloud & Full-Stack Eng"</span>,</p>
-              <p><span className="text-emerald-400">"specialization"</span>: <span className="text-amber-300">"Cybersecurity, Disaster Recovery & Space Tech"</span>,</p>
-              <p><span className="text-emerald-400">"experience"</span>: <span className="text-amber-300">"6+ Yrs Enterprise Systems, Media & ISP"</span>,</p>
-              <p><span className="text-emerald-400">"status"</span>: <span className="text-emerald-300 font-semibold">"Available for High-Impact Roles"</span></p>
-            </div>
-          )}
-
-          {activeTab === 'certs' && (
-            <div className="space-y-1.5 font-mono">
-              <p><span className="text-emerald-400">"huaweiCloud"</span>: <span className="text-sky-300">"HCIA Cloud Computing & Cloud Service (Certified)"</span>,</p>
-              <p><span className="text-emerald-400">"softwareEng"</span>: <span className="text-sky-300">"ALX Software Engineering Certificate"</span>,</p>
-              <p><span className="text-emerald-400">"virtualAssistant"</span>: <span className="text-sky-300">"ALX Virtual Assistant Specialist"</span>,</p>
-              <p><span className="text-emerald-400">"accounting"</span>: <span className="text-sky-300">"KASNEB CPA Sections 1 & 2"</span></p>
-            </div>
-          )}
-
-          {activeTab === 'stack' && (
-            <div className="space-y-1.5 font-mono">
-              <p><span className="text-emerald-400">"ict & security"</span>: <span className="text-purple-300">["MikroTik", "Linux Server", "Active Directory", "Firewalls"]</span>,</p>
-              <p><span className="text-emerald-400">"cloud & space"</span>: <span className="text-purple-300">["Huawei Cloud", "Backup/DR", "QGIS/GDAL", "Telemetry"]</span>,</p>
-              <p><span className="text-emerald-400">"fullstack"</span>: <span className="text-purple-300">["PHP", "MySQL", "React", "TypeScript", "Python"]</span>,</p>
-              <p><span className="text-emerald-400">"creative suite"</span>: <span className="text-purple-300">["Premiere Pro", "DaVinci Resolve", "Figma", "Photoshop"]</span></p>
-            </div>
-          )}
-
-          {/* Prompt Line */}
-          <div className="pt-2 flex items-center gap-2 text-white/50 border-t border-white/10 text-[11px]">
-            <span className="text-emerald-400 font-bold">&gt;</span>
-            <span className="text-white/80">system.status --check --verified</span>
-            <span className="w-2 h-4 bg-emerald-400 animate-pulse inline-block ml-auto"></span>
-          </div>
-        </div>
-
-        {/* Footer Status Bar */}
-        <div className="bg-white/5 px-4 py-2 border-t border-white/10 flex items-center justify-between text-[10px] text-white/40">
-          <span className="flex items-center gap-1.5">
-            <Server className="w-3 h-3 text-sky-400" />
-            <span>PORT 3000 (ACTIVE)</span>
-          </span>
-          <span className="text-emerald-400/80 font-mono">Hover to tilt in 3D ↺</span>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   onOpenCoverLetter,
@@ -179,7 +32,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onShowToast,
 }) => {
   const { personalInfo } = cvData;
-  const [activeTab, setActiveTab] = useState<'overview' | 'certs' | 'stack'>('overview');
 
   // Typewriter effect state
   const [roleIndex, setRoleIndex] = useState(0);
@@ -273,22 +125,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {personalInfo.bioSummary}
             </p>
 
-            {/* Verified Qualifications Pills (Computer Science Graduate pill removed) */}
-            <div className="flex flex-wrap gap-2 pt-1 font-mono text-[0.7rem]">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/[0.03] border border-white/10 text-white/80 text-xs font-light">
-                <Code2 className="w-3.5 h-3.5 text-white/60" />
-                ALX Software Engineering
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/[0.03] border border-white/10 text-white/80 text-xs font-light">
-                <Server className="w-3.5 h-3.5 text-white/60" />
-                Huawei HCIA Cloud Certified
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/[0.03] border border-white/10 text-white/80 text-xs font-light">
-                <Award className="w-3.5 h-3.5 text-white/60" />
-                CPA 1 & 2
-              </span>
-            </div>
-
             {/* Quick Contact Info & Copy Buttons */}
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-white/60 pt-1">
               <button
@@ -381,11 +217,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           </div>
 
-          {/* 3D Floating Interactive Terminal Side */}
-          <div className="lg:col-span-5 flex justify-center items-center py-4">
-            <Interactive3DTerminal
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
+          {/* Interactive Multi-Mode Engineering Card (Dossier / Topology / Terminal) */}
+          <div
+            className="lg:col-span-5 flex justify-center items-center py-4 w-[400px] h-[400px]"
+            style={{ width: '400px', height: '400px' }}
+          >
+            <HeroInteractiveCard
+              onShowToast={onShowToast}
+              onScrollToContact={scrollToContact}
             />
           </div>
 

@@ -10,7 +10,7 @@ interface CoverLetterModalProps {
 
 export const CoverLetterModal: React.FC<CoverLetterModalProps> = ({ isOpen, onClose }) => {
   const [copied, setCopied] = useState(false);
-  const [roleFocus, setRoleFocus] = useState<'general' | 'infrastructure' | 'cybersecurity' | 'cloud' | 'space' | 'software' | 'video' | 'design'>('general');
+  const [roleFocus, setRoleFocus] = useState<'general' | 'data' | 'infrastructure' | 'cybersecurity' | 'cloud' | 'automation' | 'software' | 'video' | 'design'>('general');
 
   if (!isOpen) return null;
 
@@ -26,9 +26,9 @@ Re: Application for Vacancy
 
 Dear Hiring Team,
 
-My name is Daniel Muiruri, a dedicated Computer Science graduate from South Eastern Kenya University with comprehensive hands-on expertise in enterprise ICT infrastructure management, cybersecurity risk mitigation, backup and disaster recovery solutions, cloud computing (Huawei HCIA Certified in Cloud Computing & Cloud Services), and space digital infrastructure research.
+My name is Daniel Muiruri, a dedicated Computer Science graduate from South Eastern Kenya University with comprehensive hands-on expertise in data engineering (automated ETL/ELT pipelines, analytical data warehousing, dimensional modeling, and SQL tuning), enterprise ICT infrastructure management, cybersecurity risk mitigation, backup and disaster recovery solutions, cloud computing (Huawei HCIA Certified in Cloud Computing & Cloud Services), and full-stack software development.
 
-Throughout my academic journey and 6+ years of technical consulting and ISP operations, I have managed enterprise systems, configured robust network routing, enforced security best practices, and designed resilient data redundancy pipelines. Furthermore, I actively explore applied research in geospatial data analysis, remote sensing raster pipelines, and fault-tolerant space digital infrastructure telemetry.
+Throughout my academic journey and 6+ years of technical consulting and ISP operations, I have engineered automated data pipelines, managed enterprise systems, configured robust network routing, enforced security best practices, and designed resilient data redundancy pipelines. Furthermore, I engineer Python data workflows, system administration automation, and high-availability database applications.
 
 As an active member of the SEKU ICT Club and collaborative software initiatives, I thrive in fast-paced, cross-functional environments where teamwork, research-driven innovation, and proactive problem solving are essential.
 
@@ -93,6 +93,16 @@ Daniel Muiruri Itugi`;
             General CS
           </button>
           <button
+            onClick={() => setRoleFocus('data')}
+            className={`px-2.5 py-1 rounded-sm text-xs transition-all ${
+              roleFocus === 'data'
+                ? 'bg-emerald-400 text-black font-semibold shadow-sm'
+                : 'bg-white/5 text-white/60 hover:text-white border border-white/10'
+            }`}
+          >
+            Data Engineering
+          </button>
+          <button
             onClick={() => setRoleFocus('infrastructure')}
             className={`px-2.5 py-1 rounded-sm text-xs transition-all ${
               roleFocus === 'infrastructure'
@@ -123,14 +133,14 @@ Daniel Muiruri Itugi`;
             Cloud (Huawei HCIA)
           </button>
           <button
-            onClick={() => setRoleFocus('space')}
+            onClick={() => setRoleFocus('automation')}
             className={`px-2.5 py-1 rounded-sm text-xs transition-all ${
-              roleFocus === 'space'
+              roleFocus === 'automation'
                 ? 'bg-white text-black font-semibold'
                 : 'bg-white/5 text-white/60 hover:text-white border border-white/10'
             }`}
           >
-            Space & Remote Sensing
+            DevOps & Automation
           </button>
           <button
             onClick={() => setRoleFocus('software')}
@@ -191,17 +201,20 @@ Daniel Muiruri Itugi`;
 
           <p>
             My name is <strong className="text-white font-medium">Daniel Muiruri</strong>, a dedicated Computer Science graduate from South Eastern Kenya University with extensive practical competence across{' '}
+            <span className={roleFocus === 'data' ? 'text-emerald-400 font-semibold underline' : 'text-white'}>
+              data engineering &amp; analytical warehousing
+            </span>,{' '}
             <span className={roleFocus === 'infrastructure' || roleFocus === 'cybersecurity' ? 'text-emerald-400 font-semibold underline' : 'text-white'}>
               enterprise ICT infrastructure management
             </span>,{' '}
             <span className={roleFocus === 'cybersecurity' ? 'text-emerald-400 font-semibold underline' : 'text-white'}>
-              cybersecurity & risk management
+              cybersecurity &amp; risk management
             </span>,{' '}
             <span className={roleFocus === 'cloud' ? 'text-emerald-400 font-semibold underline' : 'text-white'}>
               cloud virtualization (Huawei HCIA Certified)
             </span>,{' '}
-            <span className={roleFocus === 'space' ? 'text-emerald-400 font-semibold underline' : 'text-white'}>
-              space digital infrastructure & geospatial remote sensing
+            <span className={roleFocus === 'automation' ? 'text-emerald-400 font-semibold underline' : 'text-white'}>
+              enterprise workflow automation &amp; scripting
             </span>, and{' '}
             <span className={roleFocus === 'software' ? 'text-emerald-400 font-semibold underline' : 'text-white'}>
               full-stack software systems
@@ -215,6 +228,9 @@ Daniel Muiruri Itugi`;
           {roleFocus !== 'general' && (
             <div className="p-3.5 rounded-sm bg-white/5 border border-white/10 text-xs text-white/90 space-y-1">
               <span className="font-mono text-[10px] uppercase tracking-wider block text-emerald-400">Role-Tailored Highlight:</span>
+              {roleFocus === 'data' && (
+                <p>Experienced Data Engineer with proven competence in designing automated ETL/ELT pipelines, architecting star/snowflake schema data warehouses, tuning complex SQL queries, and processing streaming/batch telemetry using Python, PostgreSQL, DuckDB, and Parquet to deliver sub-minute analytics and automated data governance.</p>
+              )}
               {roleFocus === 'infrastructure' && (
                 <p>Equipped with 15+ months of combined enterprise ICT experience across Appville ISP and NAWASCO municipal systems — administering Linux/Windows servers, configuring MikroTik/Cisco routers, managing structured cabling, and guaranteeing 99.9% network uptime SLAs.</p>
               )}
@@ -224,8 +240,8 @@ Daniel Muiruri Itugi`;
               {roleFocus === 'cloud' && (
                 <p>Certified in both Huawei HCIA Cloud Computing V4.0 and HCIA Cloud Service V3.0, with demonstrated capability in FusionCompute virtualization, cloud storage clustering, VPC network architecture, and cloud disaster recovery.</p>
               )}
-              {roleFocus === 'space' && (
-                <p>Actively engaged in applied computational research on geospatial raster pipelines (QGIS/GDAL), remote sensing satellite imagery band analysis, and space digital infrastructure modeling for fault-tolerant telemetry processing and ground station communication.</p>
+              {roleFocus === 'automation' && (
+                <p>Skilled in developing Python automation pipelines, cron/systemd scheduling, RESTful API integrations, and non-blocking data backup scripts that eliminate repetitive manual workflows and guarantee transactional data integrity.</p>
               )}
               {roleFocus === 'software' && (
                 <p>Proven full-stack engineering expertise (PHP, MySQL, React, TypeScript, C++, Python) with deployed systems including the Kitui Referral Hospital Emergency Blood Bank, Landlord Property Management, and the Appville ISP Web Portal.</p>

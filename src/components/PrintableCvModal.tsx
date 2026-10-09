@@ -57,6 +57,7 @@ EDUCATION & CERTIFICATIONS:
 ${education.map(e => `• ${e.qualification} — ${e.institution} (${e.period})${e.details ? `\n  ${e.details}` : ''}`).join('\n')}
 
 TECHNICAL DOMAIN MATRIX & CORE COMPETENCIES:
+• Data Engineering & Warehousing: Automated ETL/ELT pipelines, star/snowflake schemas, Python, PostgreSQL, DuckDB, Parquet, Airflow DAGs, SQL optimization, data governance.
 • ICT Infrastructure & Systems Admin: Linux/Windows Server, Active Directory, Cisco/MikroTik routing, Cat6/Fiber cabling, VLANs, Wi-Fi, 24/7 SLA uptime.
 • Cloud & Disaster Recovery: Huawei HCIA Cloud Computing V4.0 & Cloud Service V3.0 Certified, FusionCompute VM orchestration, snapshot policies, RPO/RTO strategies, offsite replication.
 • Cybersecurity & Risk Management: Firewall ACLs, RBAC, network segmentation, vulnerability assessments, security audits.
@@ -265,7 +266,13 @@ ${references.map(ref => `• ${ref.name} — ${ref.title}, ${ref.organization}\n
                 <div className={`p-2.5 rounded-sm border ${
                   previewTheme === 'light' ? 'bg-slate-50 border-slate-200 border-l-4 border-l-teal-600' : 'bg-white/[0.02] border-white/5 border-l-4 border-l-emerald-500'
                 }`}>
-                  <span className={`font-mono font-bold block mb-0.5 ${previewTheme === 'light' ? 'text-teal-800' : 'text-emerald-400'}`}>ICT Infrastructure & Systems:</span>
+                  <span className={`font-mono font-bold block mb-0.5 ${previewTheme === 'light' ? 'text-teal-800' : 'text-emerald-400'}`}>Data Engineering &amp; Warehousing:</span>
+                  <p className={`text-[11px] ${previewTheme === 'light' ? 'text-slate-600' : 'text-white/70'}`}>Automated ETL/ELT pipelines, star/snowflake schemas, Python, PostgreSQL, DuckDB, Parquet, SQL optimization &amp; telemetry streaming.</p>
+                </div>
+                <div className={`p-2.5 rounded-sm border ${
+                  previewTheme === 'light' ? 'bg-slate-50 border-slate-200 border-l-4 border-l-teal-600' : 'bg-white/[0.02] border-white/5 border-l-4 border-l-emerald-500'
+                }`}>
+                  <span className={`font-mono font-bold block mb-0.5 ${previewTheme === 'light' ? 'text-teal-800' : 'text-emerald-400'}`}>ICT Infrastructure &amp; Systems:</span>
                   <p className={`text-[11px] ${previewTheme === 'light' ? 'text-slate-600' : 'text-white/70'}`}>Linux/Windows Server, Active Directory, structured cabling, router/switch config, VLANs, Wi-Fi, 24/7 SLA uptime.</p>
                 </div>
                 <div className={`p-2.5 rounded-sm border ${

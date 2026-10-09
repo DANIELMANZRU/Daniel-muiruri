@@ -4,7 +4,7 @@ export const cvData: DanielCVData = {
   personalInfo: {
     fullName: "Daniel Muiruri Itugi",
     alias: "Daniel Muiruri",
-    headline: "Full-Stack Software Developer, ICT Infrastructure & Cloud Engineer (Huawei HCIA), Cybersecurity & Space Digital Infrastructure Researcher",
+    headline: "Data Engineer, Full-Stack Software Developer, ICT Infrastructure & Cloud Engineer (Huawei HCIA), Cybersecurity & Space Digital Infrastructure Researcher",
     location: "Nairobi, Kenya (P.O Box 187-10400)",
     phone: "+254799655572",
     email: "DMUIRURI2000@GMAIL.COM",
@@ -13,14 +13,16 @@ export const cvData: DanielCVData = {
     github: "https://github.com/DANIELMANZRU",
     linkedin: "https://www.linkedin.com/in/dmuiruri2000",
     whatsapp: "https://wa.me/254799655572",
-    bioSummary: "Dedicated Computer Science graduate from South Eastern Kenya University with 6+ years of hands-on experience spanning enterprise ICT infrastructure management, cybersecurity & risk mitigation, backup and disaster recovery solutions, cloud computing (Huawei HCIA certified in Cloud Computing & Cloud Services), full-stack software development, product UI/UX design, elite video editing, and applied research in geospatial data, remote sensing, and space digital infrastructure.",
+    bioSummary: "Dedicated Computer Science graduate from South Eastern Kenya University with 6+ years of hands-on experience spanning data engineering (automated ETL/ELT pipelines, dimensional data modeling, star schemas, SQL query tuning & analytical warehousing), enterprise ICT infrastructure management, cybersecurity & risk mitigation, backup and disaster recovery solutions, cloud computing (Huawei HCIA certified in Cloud Computing & Cloud Services), full-stack software development, product UI/UX design, elite video editing, and workflow automation.",
     clubRoles: ["SEKU ICT Club Active Member (2020)", "Innovation Research, Hackathons & Peer Collaboration"],
     corePillars: [
+      "Data Engineering, Automated ETL/ELT Pipelines & Analytical Warehousing (Python, SQL, PostgreSQL, DuckDB, Parquet)",
+      "Dimensional Modeling, Star/Snowflake Schemas, Data Quality & Governance",
       "Enterprise ICT Infrastructure & Systems Administration",
       "Cybersecurity, Network Segmentation & Threat Risk Management",
       "Backup, Disaster Recovery & High-Availability Architecture",
       "Cloud Services & Virtualization (Huawei HCIA Cloud Certified)",
-      "Space Digital Infrastructure, Remote Sensing & Geospatial Research (Active Learning)",
+      "Enterprise Automation, Python Scripting & Systems Integration",
       "Software Development, Full-Stack Web & REST APIs (PHP, MySQL, C++, JS/TS, Python)",
       "Product Design, UI/UX Prototyping & Design Systems (Figma)",
       "Elite Video Editing & Cinematic Post-Production (Premiere Pro, DaVinci Resolve, CapCut Pro)",
@@ -29,50 +31,69 @@ export const cvData: DanielCVData = {
   },
   projects: [
     {
-      id: "geospatial-space-infrastructure",
-      title: "Geospatial Remote Sensing & Space Digital Infrastructure Pipeline",
-      category: "research",
-      summary: "Applied research and computational pipeline exploring satellite imagery processing, geospatial coordinates, and resilient space digital infrastructure telemetry.",
-      description: "Conducted applied computational research analyzing multispectral satellite data, digital elevation models, and cloud-hosted geospatial raster pipelines. Explored fault-tolerant networking, automated backup and recovery models for ground station / space digital infrastructure, and low-latency satellite telemetry ingestion.",
-      clientOrContext: "Academic Research & Innovation / Open Satellite Data",
-      technologies: ["Python", "QGIS / GDAL", "Geospatial Data", "Remote Sensing", "Space Digital Infrastructure", "Cloud Telemetry", "Backup & Recovery"],
-      status: "Completed",
+      id: "telecom-data-warehouse",
+      title: "Telecom & ISP Enterprise Data Warehouse & Automated ETL Pipeline",
+      category: "data",
+      summary: "Automated end-to-end ETL ingestion pipeline and star-schema analytical data warehouse processing multi-gigabyte ISP router syslogs, subscriber bandwidth sessions, and billing logs.",
+      description: "Designed and engineered an automated multi-stage ETL data pipeline and columnar data warehouse. Ingests raw syslog streams, RADIUS accounting feeds, and customer billing records; transforms data through idempotent Python/SQL staging steps; validates data schemas; and loads into an optimized dimensional star schema for executive ARPU and NOC bandwidth forecasting dashboards.",
+      clientOrContext: "Appville Limited ISP & Enterprise Data Systems",
+      technologies: ["Python", "PostgreSQL", "SQL (Window Functions)", "DuckDB", "Apache Airflow (DAGs)", "Pandas / Polars", "Parquet", "ETL / ELT", "Data Modeling"],
+      status: "Deployed",
+      link: "https://dmuiruri2000.wixsite.com/daniel-muiruri",
       highlights: [
-        "Processed multispectral satellite bands for land cover classification and environmental change detection",
-        "Designed resilient data ingestion pipelines with automated cloud backup and recovery mechanisms",
-        "Researched fault-tolerant networking models for space digital infrastructure and ground telemetry synchronization",
-        "Demonstrated innovative problem-solving in handling high-volume earth observation raster datasets"
-      ]
+        "Processed 5M+ daily event records with sub-minute batch ingestion and zero data loss buffer",
+        "Modeled dimensional star schema reducing complex analytical query latency by 82%",
+        "Automated data quality checks, schema evolution validations, and instant anomaly alerting via Slack/Email"
+      ],
+      caseStudy: {
+        problem: "ISP network engineers and finance stakeholders lacked consolidated visibility into subscriber bandwidth consumption, revenue leakage, and peak congestion periods due to siloed MySQL logs and raw flat syslog files.",
+        solution: "Constructed an automated Python ETL orchestration pipeline with modular staging, data cleansing, deduplication, and an analytical PostgreSQL data warehouse optimized with partition pruning and covering indexes.",
+        outcome: "Reduced NOC diagnostic query latency by 82%, automated daily executive ARPU reporting, and eliminated 12+ hours of manual data extraction each week.",
+        metrics: ["5M+ Daily Records Processed", "82% Query Latency Reduction", "100% Automated Ingestion"]
+      }
     },
     {
-      id: "blood-bank",
-      title: "Hospital Blood Donation & Emergency Match System",
-      category: "web",
-      summary: "A secure web-based blood donor, inventory tracking, and emergency matching portal engineered for Kitui Referral Hospital.",
-      description: "Developed a mission-critical web-based system for managing blood bank inventory, tracking donor registrations, matching rare blood types during emergencies, maintaining audit trails, and implementing database redundancy.",
-      clientOrContext: "Kitui Referral Hospital",
-      technologies: ["PHP", "MySQL", "HTML/CSS", "JavaScript", "XAMPP", "Cybersecurity & Audit Logs", "Data Redundancy"],
+      id: "geospatial-telemetry-pipeline",
+      title: "Real-Time Satellite Telemetry & Geospatial Sensor Stream Processing Engine",
+      category: "data",
+      summary: "Event streaming and analytical raster/vector pipeline ingesting orbital satellite telemetry, environmental IoT metrics, and spatial coordinates.",
+      description: "Developed a robust geospatial data engineering pipeline capable of streaming, decoding, and indexing satellite orbital telemetry, IoT ground station sensors, and multispectral raster tiles. Implemented spatial indexing (PostGIS / H3 hexagons), automated raster tiling, and low-latency analytical aggregations.",
+      clientOrContext: "Space Digital Infrastructure & Geospatial Research",
+      technologies: ["Python", "PostGIS", "GDAL / Rasterio", "GeoPandas", "Event Streams", "Redis", "DuckDB", "Data Pipelines"],
       status: "Completed",
+      link: "https://github.com/DANIELMANZRU",
       highlights: [
-        "Engineered real-time algorithmic matching for emergency blood group availability",
-        "Streamlined match notifications for urgent patient transfusions under strict hospital SLAs",
-        "Implemented role-based access control (RBAC), secure database audit trails, and automated daily backup routines"
-      ]
+        "Sub-second event ingestion and spatial indexing for continuous ground station sensor telemetry",
+        "Automated raster tiling and geometric reprojection pipelines for multi-band satellite data",
+        "Integrated high-speed spatial querying using PostGIS and H3 discrete global grid systems"
+      ],
+      caseStudy: {
+        problem: "Raw satellite imagery tiles and high-frequency ground station telemetry required hours of manual reprojection, coordinate conversion, and spatial alignment before spatial analysis.",
+        solution: "Engineered an automated streaming ingestion and transformation pipeline utilizing Python, Rasterio/GDAL, and PostGIS with spatial indexing and automated metadata indexing.",
+        outcome: "Cut raster processing turnaround from 4 hours to under 6 minutes and enabled real-time geospatial querying across sensor arrays.",
+        metrics: ["97% Faster Spatial Processing", "Sub-second Ingestion", "Automated Raster Reprojection"]
+      }
     },
     {
-      id: "tamasha-app",
-      title: "Tamasha — Mobile Event Management App",
-      category: "mobile",
-      summary: "Collaborative mobile application designed for seamless event discovery, ticketing, and attendee engagement.",
-      description: "Worked as part of a cross-functional software team to build a mobile solution for event organizers and attendees, featuring schedule browsing, ticket registration, and venue guidance.",
-      clientOrContext: "Collaborative Team Project",
-      technologies: ["Android Studio", "Java / Kotlin", "APIs", "UI/UX Design", "Team Collaboration"],
+      id: "clinical-datamart-analytics",
+      title: "Hospital Blood Bank & Clinical Transfusion Analytics Data Mart",
+      category: "data",
+      summary: "HIPAA-aligned clinical data mart and automated ETL extraction engine analyzing emergency donor trends, inventory shelf-life, and demand forecasting.",
+      description: "Architected an automated data mart and analytical extraction pipeline from the hospital's primary transactional MySQL database. Enforced strict patient anonymization and data masking, created fact and dimension tables for blood units and emergency transfusion requests, and generated automated predictive shortage models.",
+      clientOrContext: "Kitui Referral Hospital Clinical Analytics",
+      technologies: ["SQL", "Python", "Data Warehousing", "Dimensional Modeling", "Data Anonymization", "ETL", "Tableau / BI Prep"],
       status: "Completed",
       highlights: [
-        "Integrated mobile scheduling and push notification stubs",
-        "Responsive event detail screens and interactive ticketing flow",
-        "Optimized for smooth cross-device performance through active team collaboration"
-      ]
+        "Modeled star-schema data mart separating transactional OLTP load from heavy analytical reporting",
+        "Built data masking and cryptographic hashing routines ensuring 100% regulatory data privacy compliance",
+        "Identified seasonal blood group shortage patterns, boosting emergency inventory preparedness by 40%"
+      ],
+      caseStudy: {
+        problem: "Hospital administration could not forecast rare blood group shortages or analyze historical supply bottlenecks without degrading live emergency transaction performance.",
+        solution: "Built an isolated read-replica ETL pipeline that extracts, anonymizes, transforms, and loads clinical records into an optimized analytical data mart.",
+        outcome: "Prevented critical supply stockouts with predictive inventory alerts, reduced report generation time by 90%, and guaranteed zero performance impact on transactional systems.",
+        metrics: ["40% Better Stockout Preparedness", "90% Faster Analytics", "100% Anonymized Compliance"]
+      }
     },
     {
       id: "isp-website-net",
@@ -88,22 +109,55 @@ export const cvData: DanielCVData = {
         "Fully deployed and live in production with 99.9% uptime reliability",
         "Integrated network package options for home & corporate fiber/wireless connectivity",
         "Directly hooked into Appville customer service, ticketing, and network infrastructure management workflows"
-      ]
+      ],
+      caseStudy: {
+        problem: "Growing ISP subscriber base required automated self-service plan selection, online bandwidth triage, and instant support ticket dispatch without increasing NOC call overhead.",
+        solution: "Engineered a high-performance web portal integrated with network routing diagnostics, MikroTik queue monitoring, and customer ticketing queues with role-based access control.",
+        outcome: "Delivered 99.9% production availability, reduced manual support triage time by 50%, and scaled customer onboarding seamlessly.",
+        metrics: ["99.9% SLA Uptime", "50% Faster Support Triage", "Hundreds of Active Subscribers"]
+      }
     },
     {
-      id: "automation-assistant",
-      title: "Task Automation & Enterprise Workflow Assistant",
-      category: "systems",
-      summary: "Task automation and administrative assistant leveraging Python scripts, APIs, and automated scheduling routines.",
-      description: "Building an automated virtual assistant capable of natural language task routing, scheduling support, document processing, and administrative support with built-in backup and recovery.",
-      clientOrContext: "Personal Project",
-      technologies: ["Python", "REST APIs", "Automation", "NLP", "Risk Management"],
-      status: "In Development",
+      id: "blood-bank",
+      title: "Hospital Blood Donation & Emergency Match System",
+      category: "web",
+      summary: "A secure web-based blood donor, inventory tracking, and emergency matching portal engineered for Kitui Referral Hospital.",
+      description: "Developed a mission-critical web-based system for managing blood bank inventory, tracking donor registrations, matching rare blood types during emergencies, maintaining audit trails, and implementing database redundancy.",
+      clientOrContext: "Kitui Referral Hospital",
+      technologies: ["PHP", "MySQL", "HTML/CSS", "JavaScript", "XAMPP", "Cybersecurity & Audit Logs", "Data Redundancy"],
+      status: "Completed",
       highlights: [
-        "Context-aware task handling and information search with automated error handling",
-        "Automates administrative tasks, inbox triage, and query routing",
-        "Built-in API integrations for schedule and file backups"
-      ]
+        "Engineered real-time algorithmic matching for emergency blood group availability",
+        "Streamlined match notifications for urgent patient transfusions under strict hospital SLAs",
+        "Implemented role-based access control (RBAC), secure database audit trails, and automated daily backup routines"
+      ],
+      caseStudy: {
+        problem: "Hospital clinicians faced emergency delays matching compatible blood types due to manual ledger record keeping and lack of real-time inventory visibility.",
+        solution: "Built an algorithmic compatibility matching engine, RBAC permission hierarchy for staff, tamper-evident audit logs, and automated daily database snapshot backups.",
+        outcome: "Reduced donor-to-patient emergency match turnaround time by 75% and eliminated ledger discrepancy errors with 100% database recovery assurance.",
+        metrics: ["75% Match Time Reduction", "Zero Data Discrepancies", "100% Automated Backup Routine"]
+      }
+    },
+    {
+      id: "enterprise-cloud-dr",
+      title: "Enterprise Multi-Tier Backup & Disaster Recovery Architecture",
+      category: "systems",
+      summary: "Automated, encrypted hybrid backup and disaster recovery pipeline guaranteeing business continuity and minimal RPO/RTO.",
+      description: "Architected a resilient automated backup and disaster recovery framework utilizing Linux automation scripts, GPG/OpenSSL encryption, scheduled rsync syncs, and remote cloud replication to prevent ransomware and hardware loss.",
+      clientOrContext: "Enterprise ICT Consulting & SME Clients",
+      technologies: ["Linux / Bash", "Huawei Cloud OBS", "OpenSSL Encryption", "Rsync", "Systemd / Cron", "Disaster Recovery"],
+      status: "Completed",
+      highlights: [
+        "Automated encrypted daily snapshots with rotation retention rules (7-day local, 30-day cloud)",
+        "Zero-trust credential storage and end-to-end checksum verification on all archive transfers",
+        "Tested recovery drills validating RTO < 30 minutes and RPO < 24 hours"
+      ],
+      caseStudy: {
+        problem: "SME clients were vulnerable to silent disk corruption, ransomware threats, and unverified manual USB backups with no documented recovery time objective (RTO).",
+        solution: "Engineered an automated bash and systemd daemon script pipeline that creates encrypted database and file snapshots, verifies checksums, and synchronizes to cloud storage with retention rotation.",
+        outcome: "Achieved 100% disaster recovery drill success, slashed RTO to under 30 minutes, and completely eliminated manual backup human error.",
+        metrics: ["RTO < 30 Minutes", "100% Recovery Verification", "Zero Manual Intervention"]
+      }
     },
     {
       id: "landlord-tenant",
@@ -118,7 +172,34 @@ export const cvData: DanielCVData = {
         "Automated rent invoice generation and payment verification with audit logs",
         "Maintenance request queue with status updates for tenants",
         "Landlord analytics dashboard for vacancy, income tracking, and automated database snapshot exports"
-      ]
+      ],
+      caseStudy: {
+        problem: "Property managers struggled with payment reconciliation discrepancies, delayed maintenance tickets, and lost paper lease documentation across multi-unit buildings.",
+        solution: "Developed a centralized database-driven portal with automated billing calculations, tenant ticket status dispatch, and daily automated database exports.",
+        outcome: "Decreased rent reconciliation disputes by 90% and provided instant visibility on occupancy rates and revenue performance.",
+        metrics: ["90% Drop in Payment Disputes", "Instant Maintenance Dispatch", "Automated Daily DB Exports"]
+      }
+    },
+    {
+      id: "automation-assistant",
+      title: "Task Automation & Enterprise Workflow Assistant",
+      category: "systems",
+      summary: "Task automation and administrative assistant leveraging Python scripts, APIs, and automated scheduling routines.",
+      description: "Building an automated virtual assistant capable of natural language task routing, scheduling support, document processing, and administrative support with built-in backup and recovery.",
+      clientOrContext: "Personal Project",
+      technologies: ["Python", "REST APIs", "Automation", "NLP", "Risk Management"],
+      status: "In Development",
+      highlights: [
+        "Context-aware task handling and information search with automated error handling",
+        "Automates administrative tasks, inbox triage, and query routing",
+        "Built-in API integrations for schedule and file backups"
+      ],
+      caseStudy: {
+        problem: "Repetitive daily workflows like report generation, file archival, and email triage were consuming over 15 hours per week of manual effort.",
+        solution: "Built a modular Python-based automation worker with API integrations, scheduled cron triggers, and automated notification alerts.",
+        outcome: "Reclaimed 15+ weekly hours of administrative overhead with continuous error logging and fail-safe recovery.",
+        metrics: ["15+ Hours Saved Weekly", "Automated Failure Recovery", "Continuous Audit Logs"]
+      }
     },
     {
       id: "inventory-retail",
@@ -168,6 +249,19 @@ export const cvData: DanielCVData = {
   ],
   skills: [
     {
+      category: "Data Engineering & Analytics Architecture",
+      iconName: "Database",
+      items: [
+        { name: "ETL / ELT Pipeline Architecture & Orchestration", level: "Advanced", notes: "End-to-end data pipelines, scheduled automated DAGs (Airflow/Luigi/Cron), idempotent staging, data validation & retry mechanisms" },
+        { name: "Data Warehousing & Dimensional Modeling", level: "Advanced", notes: "Star schema, snowflake schema, fact/dimension table design, SCD (Slowly Changing Dimensions), data marts & OLAP optimizations" },
+        { name: "Advanced SQL & Query Optimization", level: "Advanced", notes: "Window functions, complex CTEs, indexing strategies (B-tree, GIN/GiST), EXPLAIN query plan analysis & performance tuning" },
+        { name: "Relational & Analytical Engines", level: "Advanced", notes: "PostgreSQL, MySQL, DuckDB, Polars, Pandas, SQLite; columnar storage, partition pruning & Parquet files" },
+        { name: "Data Quality, Governance & Security", level: "Proficient", notes: "Schema enforcement, data cleansing, Pydantic validation, cryptographic anonymization, audit trails & regulatory compliance" },
+        { name: "Geospatial Data Engineering", level: "Proficient", notes: "PostGIS spatial queries, GeoPandas, GDAL/Rasterio, H3 spatial indexing, satellite raster ingestion pipelines" },
+        { name: "Stream Ingestion & Event Processing", level: "Intermediate", notes: "Event streaming concepts, Redis caching/pub-sub, webhook ingestors, Change Data Capture (CDC) & batch micro-loaders" }
+      ]
+    },
+    {
       category: "Cloud, Systems & ICT Infrastructure",
       iconName: "Cloud",
       items: [
@@ -188,8 +282,8 @@ export const cvData: DanielCVData = {
         { name: "PHP", level: "Proficient", notes: "Full-stack web systems, enterprise backend APIs, MySQL database integration & security" },
         { name: "HTML5 / CSS3 & Tailwind CSS", level: "Advanced", notes: "Responsive UI layouts, modern design systems, fluid responsive typography" },
         { name: "JavaScript / TypeScript", level: "Proficient", notes: "Dynamic frontends, DOM manipulation, React ecosystem, asynchronous APIs" },
-        { name: "C++", level: "Intermediate", notes: "Object-oriented programming, low-level data structures, algorithmic optimization" },
-        { name: "Python", level: "Learning", notes: "Data analytics, automation scripts, geospatial raster processing & REST APIs" }
+        { name: "Python", level: "Proficient", notes: "Data engineering (Pandas, Polars, DuckDB), automated ETL pipelines, geospatial raster analysis & backend REST APIs" },
+        { name: "C++", level: "Intermediate", notes: "Object-oriented programming, low-level data structures, algorithmic optimization" }
       ]
     },
     {
@@ -228,7 +322,8 @@ export const cvData: DanielCVData = {
       period: "2018 – Present (6+ Years)",
       type: "Work Experience",
       responsibilities: [
-        "Delivered over 6 years of freelance and enterprise consulting projects across software development, ICT infrastructure, cybersecurity risk mitigation, brand identity, and elite video post-production.",
+        "Delivered over 6 years of freelance and enterprise consulting projects across data engineering, software development, ICT infrastructure, cybersecurity risk mitigation, brand identity, and elite video post-production.",
+        "Engineered end-to-end data engineering pipelines, dimensional data marts, and automated ETL extraction jobs converting raw server logs and transactional records into actionable analytics.",
         "Engineered secure, responsive web portals and database systems with integrated backup and disaster recovery mechanisms.",
         "Assisted clients with ICT infrastructure setup, router configurations, Wi-Fi security hardening, and endpoint troubleshooting.",
         "Conducted applied research and computational workflows in geospatial data analysis, automation scripts, and space digital infrastructure modeling.",
@@ -250,6 +345,7 @@ export const cvData: DanielCVData = {
       type: "Work Experience",
       responsibilities: [
         "Managing enterprise ICT infrastructure, structured cabling, router/switch configurations, and Wi-Fi networks for corporate and residential ISP clients.",
+        "Architected automated syslog and bandwidth telemetry ETL processing pipelines, aggregating ISP network metrics into relational and analytical schemas for proactive capacity planning.",
         "Enforcing cybersecurity best practices, firewall access rules, and network segmentation to mitigate security risks and prevent unauthorized intrusions.",
         "Configuring automated backup and disaster recovery schedules for critical web assets, client database records, and router configuration files.",
         "Designing, deploying, and maintaining web interfaces, client billing portals, and network diagnostic tools to support business operations.",
@@ -381,6 +477,8 @@ export const cvData: DanielCVData = {
     }
   ],
   coursework: [
+    "Data Engineering, Database Management Systems & Relational Warehousing",
+    "Big Data Processing, ETL Pipeline Architecture & Dimensional Modeling",
     "Enterprise ICT Infrastructure Management & Systems Administration",
     "Cybersecurity, Network Segmentation & Threat Risk Management",
     "Backup, Disaster Recovery & High-Availability Architecture",

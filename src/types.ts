@@ -1,7 +1,14 @@
+export interface ProjectCaseStudy {
+  problem: string;
+  solution: string;
+  outcome: string;
+  metrics?: string[];
+}
+
 export interface Project {
   id: string;
   title: string;
-  category: 'web' | 'mobile' | 'systems' | 'branding' | 'automation' | 'research';
+  category: 'web' | 'mobile' | 'systems' | 'branding' | 'automation' | 'research' | 'data';
   summary: string;
   description: string;
   clientOrContext?: string;
@@ -9,6 +16,7 @@ export interface Project {
   status: 'Completed' | 'Deployed' | 'In Development';
   highlights: string[];
   link?: string;
+  caseStudy?: ProjectCaseStudy;
 }
 
 export interface SkillCategory {

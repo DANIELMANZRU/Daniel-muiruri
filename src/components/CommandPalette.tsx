@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, FileText, Printer, Mail, ExternalLink, Briefcase, GraduationCap, Code2, Cpu, X, Terminal, ArrowRight, Phone } from 'lucide-react';
+import { Search, FileText, Printer, Mail, ExternalLink, Briefcase, GraduationCap, Code2, Cpu, X, Terminal, ArrowRight, Phone, Database } from 'lucide-react';
 import { cvData } from '../data/cvData';
 import { soundEffects } from '../utils/soundEffects';
 
@@ -78,6 +78,13 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       title: 'Jump to Featured Projects',
       category: 'Navigation',
       icon: <Code2 className="w-4 h-4 text-white/60" />,
+      action: () => scrollTo('projects'),
+    },
+    {
+      id: 'sec-data-projects',
+      title: 'Explore Data Engineering & ETL Pipelines',
+      category: 'Navigation',
+      icon: <Database className="w-4 h-4 text-emerald-400" />,
       action: () => scrollTo('projects'),
     },
     {

@@ -16,8 +16,16 @@ const ENGAGEMENT_TYPES: EngagementOption[] = [
     name: 'Full-Time Employment',
     category: 'Permanent Role',
     estDuration: 'Immediate Availability',
-    description: 'Hire Daniel as a full-time Full-Stack Developer, Product Designer, Network Engineer, or Systems Administrator.',
-    suggestedDeliverables: ['Custom Web Applications', 'System Architecture & APIs', 'Figma Design Systems', 'Network & IT Infrastructure', 'Maintenance & Support']
+    description: 'Hire Daniel as a full-time Data Engineer, Full-Stack Developer, Cloud Architect, or Systems Administrator.',
+    suggestedDeliverables: ['Data Pipelines & Warehousing', 'Custom Web Applications', 'Cloud Architecture & APIs', 'Network & IT Infrastructure', 'Maintenance & Support']
+  },
+  {
+    id: 'data-pipeline-build',
+    name: 'Data Engineering & ETL Pipeline',
+    category: 'Data & Analytics',
+    estDuration: '1 – 2 Weeks',
+    description: 'Design and deploy automated ETL/ELT pipelines, star-schema data warehouse, and real-time analytical dashboards.',
+    suggestedDeliverables: ['Automated Python ETL Pipeline', 'Data Warehouse Schema Design', 'SQL Performance & Index Tuning', 'Data Quality Validation & Alerts', 'Documentation & Runbooks']
   },
   {
     id: 'parttime-contract',
